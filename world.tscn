@@ -1,0 +1,71 @@
+[gd_scene load_steps=3 format=3 uid="uid://doqkdbk05537s"]
+
+[ext_resource type="PackedScene" uid="uid://bc5mtwe42ldm0" path="res://node_2d.tscn" id="1_f3sb7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gv5m4"]
+size = Vector2(1154, 127)
+
+[node name="world" type="Node2D"]
+
+[node name="platform" type="StaticBody2D" parent="."]
+position = Vector2(36, 302)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platform"]
+position = Vector2(576, 62)
+shape = SubResource("RectangleShape2D_gv5m4")
+
+[node name="ColorRect" type="ColorRect" parent="platform"]
+offset_right = 1157.0
+offset_bottom = 126.0
+color = Color(0.306763, 0.455412, 0.94476, 1)
+
+[node name="platform2" type="StaticBody2D" parent="."]
+position = Vector2(1260, 234)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platform2"]
+position = Vector2(576, 62)
+shape = SubResource("RectangleShape2D_gv5m4")
+
+[node name="ColorRect" type="ColorRect" parent="platform2"]
+offset_right = 1157.0
+offset_bottom = 126.0
+color = Color(0.306763, 0.455412, 0.94476, 1)
+
+[node name="platform3" type="StaticBody2D" parent="."]
+position = Vector2(2484, 177)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platform3"]
+position = Vector2(576, 62)
+shape = SubResource("RectangleShape2D_gv5m4")
+
+[node name="ColorRect" type="ColorRect" parent="platform3"]
+offset_right = 1157.0
+offset_bottom = 126.0
+color = Color(0.306763, 0.455412, 0.94476, 1)
+
+[node name="platform4" type="StaticBody2D" parent="."]
+position = Vector2(3710, 167)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platform4"]
+position = Vector2(576, 62)
+shape = SubResource("RectangleShape2D_gv5m4")
+
+[node name="ColorRect" type="ColorRect" parent="platform4"]
+offset_right = 1157.0
+offset_bottom = 126.0
+color = Color(0.306763, 0.455412, 0.94476, 1)
+
+[node name="platform5" type="StaticBody2D" parent="."]
+position = Vector2(4931, 277)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platform5"]
+position = Vector2(576, 62)
+shape = SubResource("RectangleShape2D_gv5m4")
+
+[node name="ColorRect" type="ColorRect" parent="platform5"]
+offset_right = 1157.0
+offset_bottom = 126.0
+color = Color(0.306763, 0.455412, 0.94476, 1)
+
+[node name="Node2D" parent="." instance=ExtResource("1_f3sb7")]
+position = Vector2(184, 234)
