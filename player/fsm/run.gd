@@ -7,10 +7,10 @@ func enter(_msg: Dictionary={}):
 
 func inner_physics_process(delta):
 	if not player.is_on_floor():
-		state_machine.change_to("air")
+		state_machine.change_to("Air")
 
-	if Input.is_action_just_pressed("ui_jump"):
-		state_machine.change_to("air", {do_jump = true})
+	if Input.is_action_just_pressed("ui_up"):
+		state_machine.change_to("Air", {"do_jump" = true})
 
 	var direction = Input.get_axis("ui_left", "ui_right")
 
@@ -24,6 +24,6 @@ func inner_physics_process(delta):
 	
 	if player.is_on_floor():
 		if player.velocity.x == 0:
-			state_machine.change_to("idle")
+			state_machine.change_to("Idle")
 		else:
-			state_machine.change_to("run")
+			state_machine.change_to("Run")
