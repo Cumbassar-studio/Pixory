@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://tbis5euj4iv1"]
+
+[ext_resource type="Texture2D" uid="uid://gbida3hvf42t" path="res://assets/ui/Vector 13.svg" id="1_ircbi"]
+[ext_resource type="Texture2D" uid="uid://c31mgsvdg3yjp" path="res://assets/ui/Vector 15.svg" id="2_birr8"]
+[ext_resource type="Texture2D" uid="uid://bpa8tnxlk5d6g" path="res://assets/ui/Vector 14.svg" id="3_nyld8"]
+
+[node name="main_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = 8.0
+offset_right = -4.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 275.0
+offset_top = 328.0
+offset_right = 423.0
+offset_bottom = 375.0
+texture_normal = ExtResource("1_ircbi")
+texture_hover = ExtResource("3_nyld8")
+texture_focused = ExtResource("2_birr8")
