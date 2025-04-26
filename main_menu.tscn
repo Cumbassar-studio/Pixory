@@ -1,27 +1,138 @@
-[gd_scene load_steps=4 format=3 uid="uid://tbis5euj4iv1"]
+[gd_scene load_steps=10 format=3 uid="uid://tbis5euj4iv1"]
 
-[ext_resource type="Texture2D" uid="uid://gbida3hvf42t" path="res://assets/ui/Vector 13.svg" id="1_ircbi"]
-[ext_resource type="Texture2D" uid="uid://c31mgsvdg3yjp" path="res://assets/ui/Vector 15.svg" id="2_birr8"]
-[ext_resource type="Texture2D" uid="uid://bpa8tnxlk5d6g" path="res://assets/ui/Vector 14.svg" id="3_nyld8"]
+[ext_resource type="Texture2D" uid="uid://gbida3hvf42t" path="res://assets/ui/exit_norm.svg" id="1_ircbi"]
+[ext_resource type="Texture2D" uid="uid://c31mgsvdg3yjp" path="res://assets/ui/exit_focused.svg" id="2_birr8"]
+[ext_resource type="Texture2D" uid="uid://bpa8tnxlk5d6g" path="res://assets/ui/exit_hover .svg" id="3_nyld8"]
+[ext_resource type="Texture2D" uid="uid://b52dldgfx1pvq" path="res://assets/ui/info_norm.svg" id="4_2oby3"]
+[ext_resource type="Texture2D" uid="uid://bymei18ca8pa4" path="res://assets/ui/info_focused.svg" id="4_64hd5"]
+[ext_resource type="Texture2D" uid="uid://bonrfdpy5d0d5" path="res://assets/ui/info_hover.svg" id="5_d4mjj"]
+[ext_resource type="Texture2D" uid="uid://cpm565us4acn4" path="res://assets/ui/main_norm.svg" id="6_iynud"]
+[ext_resource type="Texture2D" uid="uid://bahhjartpu6av" path="res://assets/ui/main_hover.svg" id="7_5wu7t"]
+[ext_resource type="Texture2D" uid="uid://1d1obl3646sg" path="res://assets/ui/main_focused.svg" id="8_n2xqc"]
 
 [node name="main_menu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -4.0
-offset_top = 8.0
-offset_right = -4.0
-offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TextureButton" type="TextureButton" parent="."]
-layout_mode = 0
-offset_left = 275.0
-offset_top = 328.0
-offset_right = 423.0
-offset_bottom = 375.0
+layout_mode = 2
+offset_left = 400.0
+offset_top = 342.0
+offset_right = 549.0
+offset_bottom = 390.0
 texture_normal = ExtResource("1_ircbi")
 texture_hover = ExtResource("3_nyld8")
 texture_focused = ExtResource("2_birr8")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="TextureButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -18.0
+offset_top = -19.0
+offset_right = 18.0
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+text = "Exit"
+
+[node name="TextureButton2" type="TextureButton" parent="."]
+layout_mode = 2
+offset_left = 594.0
+offset_top = 342.0
+offset_right = 753.0
+offset_bottom = 400.0
+texture_normal = ExtResource("4_2oby3")
+texture_hover = ExtResource("5_d4mjj")
+texture_focused = ExtResource("4_64hd5")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="TextureButton2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -26.0
+offset_right = 20.0
+offset_bottom = 26.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+text = "info"
+
+[node name="TextureButton3" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -176.0
+offset_top = -53.0
+offset_right = 179.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("6_iynud")
+texture_hover = ExtResource("7_5wu7t")
+texture_focused = ExtResource("8_n2xqc")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="TextureButton3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -47.0
+offset_top = -22.0
+offset_right = 47.0
+offset_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "Options"
+
+[node name="TextureButton4" type="TextureButton" parent="."]
+layout_mode = 2
+offset_left = 399.0
+offset_top = 196.0
+offset_right = 754.0
+offset_bottom = 269.0
+texture_normal = ExtResource("6_iynud")
+texture_hover = ExtResource("7_5wu7t")
+texture_focused = ExtResource("8_n2xqc")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="TextureButton4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -65.5
+offset_top = -22.0
+offset_right = 65.5
+offset_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "Start Game"
