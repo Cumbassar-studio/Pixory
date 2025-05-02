@@ -1,14 +1,26 @@
-[gd_scene load_steps=10 format=3 uid="uid://tbis5euj4iv1"]
+[gd_scene load_steps=19 format=3 uid="uid://tbis5euj4iv1"]
 
 [ext_resource type="Texture2D" uid="uid://gbida3hvf42t" path="res://assets/ui/exit_norm.svg" id="1_ircbi"]
 [ext_resource type="Texture2D" uid="uid://c31mgsvdg3yjp" path="res://assets/ui/exit_focused.svg" id="2_birr8"]
 [ext_resource type="Texture2D" uid="uid://bpa8tnxlk5d6g" path="res://assets/ui/exit_hover .svg" id="3_nyld8"]
 [ext_resource type="Texture2D" uid="uid://b52dldgfx1pvq" path="res://assets/ui/info_norm.svg" id="4_2oby3"]
 [ext_resource type="Texture2D" uid="uid://bymei18ca8pa4" path="res://assets/ui/info_focused.svg" id="4_64hd5"]
+[ext_resource type="Script" path="res://UI/exit_button.gd" id="4_fbibh"]
 [ext_resource type="Texture2D" uid="uid://bonrfdpy5d0d5" path="res://assets/ui/info_hover.svg" id="5_d4mjj"]
 [ext_resource type="Texture2D" uid="uid://cpm565us4acn4" path="res://assets/ui/main_norm.svg" id="6_iynud"]
 [ext_resource type="Texture2D" uid="uid://bahhjartpu6av" path="res://assets/ui/main_hover.svg" id="7_5wu7t"]
 [ext_resource type="Texture2D" uid="uid://1d1obl3646sg" path="res://assets/ui/main_focused.svg" id="8_n2xqc"]
+[ext_resource type="Texture2D" uid="uid://cu8ia3vjx1bqs" path="res://assets/ui/option_panel.svg" id="11_38aya"]
+[ext_resource type="Script" path="res://UI/start_button.gd" id="11_gtee4"]
+[ext_resource type="Script" path="res://UI/volume_slider.gd" id="12_jo2kr"]
+[ext_resource type="Script" path="res://UI/brightness_slider.gd" id="13_hnw3a"]
+[ext_resource type="Script" path="res://UI/window_mode_option.gd" id="13_le4fq"]
+[ext_resource type="Script" path="res://UI/back_button.gd" id="16_raxg3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tst4o"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_camam"]
+texture = ExtResource("11_38aya")
 
 [node name="main_menu" type="Control"]
 layout_mode = 3
@@ -18,19 +30,37 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureButton" type="TextureButton" parent="."]
+[node name="Main" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_tst4o")
+
+[node name="Exit_button" type="TextureButton" parent="Main"]
 layout_mode = 2
-offset_left = 400.0
-offset_top = 342.0
-offset_right = 549.0
-offset_bottom = 390.0
+offset_left = -156.0
+offset_top = 38.0
+offset_right = -7.0
+offset_bottom = 86.0
+grow_horizontal = 2
+grow_vertical = 2
 texture_normal = ExtResource("1_ircbi")
 texture_hover = ExtResource("3_nyld8")
 texture_focused = ExtResource("2_birr8")
 ignore_texture_size = true
 stretch_mode = 4
+script = ExtResource("4_fbibh")
 
-[node name="Label" type="Label" parent="TextureButton"]
+[node name="Label" type="Label" parent="Main/Exit_button"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -46,19 +76,21 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 20
 text = "Exit"
 
-[node name="TextureButton2" type="TextureButton" parent="."]
+[node name="Info_button" type="TextureButton" parent="Main"]
 layout_mode = 2
-offset_left = 594.0
-offset_top = 342.0
-offset_right = 753.0
-offset_bottom = 400.0
+offset_left = 38.0
+offset_top = 38.0
+offset_right = 197.0
+offset_bottom = 96.0
+grow_horizontal = 2
+grow_vertical = 2
 texture_normal = ExtResource("4_2oby3")
 texture_hover = ExtResource("5_d4mjj")
 texture_focused = ExtResource("4_64hd5")
 ignore_texture_size = true
 stretch_mode = 4
 
-[node name="Label" type="Label" parent="TextureButton2"]
+[node name="Label" type="Label" parent="Main/Info_button"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -74,7 +106,7 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 20
 text = "info"
 
-[node name="TextureButton3" type="TextureButton" parent="."]
+[node name="Option_button" type="TextureButton" parent="Main"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -92,8 +124,9 @@ texture_hover = ExtResource("7_5wu7t")
 texture_focused = ExtResource("8_n2xqc")
 ignore_texture_size = true
 stretch_mode = 4
+script = ExtResource("16_raxg3")
 
-[node name="Label" type="Label" parent="TextureButton3"]
+[node name="Label" type="Label" parent="Main/Option_button"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -109,19 +142,22 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 24
 text = "Options"
 
-[node name="TextureButton4" type="TextureButton" parent="."]
+[node name="Start_button" type="TextureButton" parent="Main"]
 layout_mode = 2
-offset_left = 399.0
-offset_top = 196.0
-offset_right = 754.0
-offset_bottom = 269.0
+offset_left = -157.0
+offset_top = -108.0
+offset_right = 198.0
+offset_bottom = -35.0
+grow_horizontal = 2
+grow_vertical = 2
 texture_normal = ExtResource("6_iynud")
 texture_hover = ExtResource("7_5wu7t")
 texture_focused = ExtResource("8_n2xqc")
 ignore_texture_size = true
 stretch_mode = 5
+script = ExtResource("11_gtee4")
 
-[node name="Label" type="Label" parent="TextureButton4"]
+[node name="Label" type="Label" parent="Main/Start_button"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -136,3 +172,89 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 24
 text = "Start Game"
+
+[node name="Panel" type="Panel" parent="Main"]
+visible = false
+layout_mode = 0
+offset_left = -156.0
+offset_top = -176.0
+offset_right = 245.0
+offset_bottom = 141.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_camam")
+
+[node name="Volume_slider" type="HSlider" parent="Main/Panel"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 23.0
+offset_top = -140.0
+offset_right = -23.0
+offset_bottom = -124.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("12_jo2kr")
+
+[node name="Brightness_slider" type="HSlider" parent="Main/Panel"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 23.0
+offset_top = -86.0
+offset_right = -23.0
+offset_bottom = -70.0
+grow_horizontal = 2
+grow_vertical = 2
+min_value = 0.5
+max_value = 1.4
+step = 0.01
+value = 1.0
+script = ExtResource("13_hnw3a")
+
+[node name="WindowModeOption" type="OptionButton" parent="Main/Panel"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 143.0
+offset_right = 62.0
+offset_bottom = 176.0
+script = ExtResource("13_le4fq")
+
+[node name="Back_button" type="TextureButton" parent="Main/Panel"]
+layout_mode = 0
+offset_top = 272.0
+offset_right = 124.0
+offset_bottom = 312.0
+texture_normal = ExtResource("1_ircbi")
+texture_hover = ExtResource("3_nyld8")
+texture_focused = ExtResource("2_birr8")
+ignore_texture_size = true
+stretch_mode = 4
+script = ExtResource("16_raxg3")
+
+[node name="Label" type="Label" parent="Main/Panel/Back_button"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -18.0
+offset_top = -19.0
+offset_right = 18.0
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+text = "Exit"
+
+[connection signal="pressed" from="Main/Exit_button" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="Main/Exit_button" to="Main/Exit_button" method="_on_pressed"]
+[connection signal="pressed" from="Main/Option_button" to="Main/Option_button" method="_on_pressed"]
+[connection signal="pressed" from="Main/Start_button" to="Main/Start_button" method="_on_pressed"]
+[connection signal="value_changed" from="Main/Panel/Volume_slider" to="." method="_on_volume_slider_value_changed"]
+[connection signal="value_changed" from="Main/Panel/Volume_slider" to="Main/Panel/Volume_slider" method="_on_value_changed"]
+[connection signal="value_changed" from="Main/Panel/Brightness_slider" to="Main/Panel/Brightness_slider" method="_on_value_changed"]
+[connection signal="pressed" from="Main/Panel/Back_button" to="Main/Panel/Back_button" method="_on_pressed"]

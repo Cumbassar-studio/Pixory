@@ -14,3 +14,7 @@ config/name="Новый игровой проект"
 run/main_scene="res://main_menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GlobalWorldEnviroment="*res://world_enviroment.tscn"
