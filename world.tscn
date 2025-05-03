@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://doqkdbk05537s"]
+[gd_scene load_steps=5 format=3 uid="uid://doqkdbk05537s"]
 
 [ext_resource type="PackedScene" uid="uid://bc5mtwe42ldm0" path="res://node_2d.tscn" id="1_f3sb7"]
+[ext_resource type="PackedScene" uid="uid://bl1hqoxkdati2" path="res://pickable_obj.tscn" id="1_tlwt5"]
+[ext_resource type="PackedScene" uid="uid://dceb3mxxaw1ec" path="res://movable_obj.tscn" id="2_aqk2v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gv5m4"]
 size = Vector2(1154, 127)
@@ -30,6 +32,15 @@ shape = SubResource("RectangleShape2D_gv5m4")
 offset_right = 1157.0
 offset_bottom = 126.0
 color = Color(0.306763, 0.455412, 0.94476, 1)
+
+[node name="pickable_obj" parent="platform2" instance=ExtResource("1_tlwt5")]
+position = Vector2(-820, -33)
+
+[node name="pickable_obj2" parent="platform2" instance=ExtResource("1_tlwt5")]
+position = Vector2(-566, -33)
+
+[node name="movable_obj" parent="platform2" instance=ExtResource("2_aqk2v")]
+position = Vector2(186, -89)
 
 [node name="platform3" type="StaticBody2D" parent="."]
 position = Vector2(2484, 177)

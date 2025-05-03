@@ -2,7 +2,7 @@ extends StatePlayer
 
 
 func enter(_msg: Dictionary={}):
-	player.velocity = Vector2.ZERO
+	#player.velocity = Vector2.ZERO
 	$"../../Debug/Vbox/L_state".set_text(name)
 func inner_physics_process(_delta):
 	
