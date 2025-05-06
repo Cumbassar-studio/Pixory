@@ -2,25 +2,24 @@ class_name State
 extends Node
 
 
-var state_machine = null
+var state_machine: Node = null
 
 
-func innner_unhandled_input(_event: InputEvent):
+func innner_unhandled_input(_event: InputEvent) -> void:
 	pass
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func inner_process(_delta: float):
+func inner_process(_delta: float) -> void:
 	pass
 
 
-func inner_physics_process(_delta: float):
+func inner_physics_process(_delta: float) -> void:
 	pass
 
 
-func enter(_msg: Dictionary={}):
+func enter(_msg: Dictionary={}) -> void:
 	pass
 
 
-func exit():
+func exit() -> void:
 	pass

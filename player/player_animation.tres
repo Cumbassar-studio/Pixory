@@ -1,0 +1,103 @@
+[gd_resource type="SpriteFrames" load_steps=18 format=3 uid="uid://chw0ds5ueqvjt"]
+
+[ext_resource type="Texture2D" uid="uid://bfqxyfifbs14x" path="res://player/Sprites/Walk/iddle.png" id="1_d5ik0"]
+[ext_resource type="Texture2D" uid="uid://jtcjedscim2c" path="res://player/Sprites/Jump/jump_stage_1.png" id="2_h1aow"]
+[ext_resource type="Texture2D" uid="uid://btkfcmjpnwpm1" path="res://player/Sprites/Run/run_3.png" id="3_ohu4k"]
+[ext_resource type="Texture2D" uid="uid://bfcb8tuxkm4ox" path="res://player/Sprites/Jump/Fall.png" id="3_sglrc"]
+[ext_resource type="Texture2D" uid="uid://5xvx8nxnhtcy" path="res://player/Sprites/Punch/punh_1.png" id="4_mjvhx"]
+[ext_resource type="Texture2D" uid="uid://cv8eb4w3niuc" path="res://player/Sprites/Jump/jump_1.png" id="4_v2udu"]
+[ext_resource type="Texture2D" uid="uid://qbnyuj6daedq" path="res://player/Sprites/Run/run_6.png" id="5_sglrc"]
+[ext_resource type="Texture2D" uid="uid://djttnkq4xhqdn" path="res://player/Sprites/Punch/punh_2.png" id="5_v2udu"]
+[ext_resource type="Texture2D" uid="uid://dtccjsomii0uq" path="res://player/Sprites/Punch/punh_3.png" id="6_b1fxq"]
+[ext_resource type="Texture2D" uid="uid://cmoxe4vcn0ivt" path="res://player/Sprites/Walk/walk_right_1.png" id="7_h3cgn"]
+[ext_resource type="Texture2D" uid="uid://ij1b5re885rf" path="res://player/Sprites/Punch/punh_4.png" id="7_hg8c3"]
+[ext_resource type="Texture2D" uid="uid://ce61im2rwtvy0" path="res://player/Sprites/Walk/walk_right_2.png" id="8_ne53x"]
+[ext_resource type="Texture2D" uid="uid://bm14t4q42la8w" path="res://player/Sprites/Punch/punh_5.png" id="8_q8awr"]
+[ext_resource type="Texture2D" uid="uid://ub8vf7emhvdx" path="res://player/Sprites/Walk/walk_right_5.png" id="9_mjvhx"]
+[ext_resource type="Texture2D" uid="uid://yxbcymskhabl" path="res://player/Sprites/Punch/punh_6.png" id="9_qtal5"]
+[ext_resource type="Texture2D" uid="uid://bg428qn7muah7" path="res://player/Sprites/Punch/punh_7.png" id="10_pr72f"]
+[ext_resource type="Texture2D" uid="uid://l7hy6428brfm" path="res://player/Sprites/Run/run_middle.png" id="12_4a15q"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_h1aow")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_sglrc")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_d5ik0")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_v2udu")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_mjvhx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_v2udu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_b1fxq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_hg8c3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_q8awr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_qtal5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_pr72f")
+}],
+"loop": true,
+"name": &"punch",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ohu4k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_4a15q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_sglrc")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_h3cgn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ne53x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_mjvhx")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]

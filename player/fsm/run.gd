@@ -1,29 +1,45 @@
 extends StatePlayer
 
-
-func enter(_msg: Dictionary={}):
+func enter(_msg: Dictionary = {}) -> void:
 	$"../../Debug/Vbox/L_state".set_text(name)
-	pass
 
-func inner_physics_process(delta):
-	if not player.is_on_floor():
-		state_machine.change_to("Air")
-
-	if Input.is_action_just_pressed("ui_up"):
-		state_machine.change_to("Air", {"do_jump" = true})
-
+func inner_physics_process(_delta) -> void:
 	var direction = Input.get_axis("ui_left", "ui_right")
+	var is_sprinting = Input.is_action_pressed("ui_shift")
+	
+	var target_speed = player.SPRINT_SPEED if is_sprinting else player.SPEED
 
-	$"../../Debug/Vbox/L_dir".set_text(str(direction))
-	if direction:
-		player.velocity.x = lerp(player.velocity.x, direction * player.SPEED, player.ACCELERATION)
+	# Логика движения
+	if direction != 0:
+		player.velocity.x = lerp(player.velocity.x, direction * target_speed, player.ACCELERATION)
 	else:
 		player.velocity.x = move_toward(player.velocity.x, 0, player.RUN_INNERT)
-	$"../../Debug/Vbox/L_vel".set_text(str(player.velocity))
-	player.move_and_slide()
 	
+	# Обновляем дебаг-инфу
+	$"../../Debug/Vbox/L_dir".set_text(str(direction))
+	$"../../Debug/Vbox/L_vel".set_text(str(player.velocity))
+
+	# Запускаем анимацию
+	if direction != 0:
+		if is_sprinting:
+			player.animation.play("run")
+		else:
+			player.animation.play("walk")
+	else:
+		player.animation.stop()
+
+	# Перемещаем персонажа
+	player.move_and_slide()
+
+	# Смена состояния, если персонаж на полу
 	if player.is_on_floor():
 		if player.velocity.x == 0:
 			state_machine.change_to("Idle")
 		else:
 			state_machine.change_to("Run")
+	else:
+		state_machine.change_to("Air")
+
+	# Прыжок
+	if Input.is_action_just_pressed("ui_up") and player.is_on_floor():
+		state_machine.change_to("Air", {"do_jump": true})

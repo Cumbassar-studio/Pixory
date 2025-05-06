@@ -1,29 +1,28 @@
 [gd_scene load_steps=8 format=3 uid="uid://bc5mtwe42ldm0"]
 
-[ext_resource type="Script" path="res://player/player.gd" id="1_0e48y"]
-[ext_resource type="Texture2D" uid="uid://db5fn28gqsk4y" path="res://icon.svg" id="1_wtcfe"]
-[ext_resource type="Script" path="res://player/fsm/fsm.gd" id="3_epypp"]
-[ext_resource type="Script" path="res://player/fsm/idle.gd" id="4_q6r6c"]
-[ext_resource type="Script" path="res://player/fsm/run.gd" id="5_kdubu"]
-[ext_resource type="Script" path="res://player/fsm/air.gd" id="6_kdubu"]
+[ext_resource type="Script" uid="uid://vmwmd8lghf82" path="res://player/player.gd" id="1_0e48y"]
+[ext_resource type="Script" uid="uid://bvlu1vebabi6h" path="res://player/fsm/fsm.gd" id="3_epypp"]
+[ext_resource type="Script" uid="uid://bodj11vbwp4a6" path="res://player/fsm/idle.gd" id="4_q6r6c"]
+[ext_resource type="Script" uid="uid://cl81kh3up3l02" path="res://player/fsm/run.gd" id="5_kdubu"]
+[ext_resource type="SpriteFrames" uid="uid://chw0ds5ueqvjt" path="res://player/player_animation.tres" id="6_d21ai"]
+[ext_resource type="Script" uid="uid://21e64kr0ijhc" path="res://player/fsm/air.gd" id="6_kdubu"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0e48y"]
-size = Vector2(128, 128)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rj586"]
+radius = 6.0
 
 [node name="player" type="CharacterBody2D"]
 script = ExtResource("1_0e48y")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_wtcfe")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_0e48y")
+shape = SubResource("CapsuleShape2D_rj586")
 
 [node name="Debug" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -18.0
+offset_top = -57.0
+offset_right = 22.0
+offset_bottom = -17.0
 
 [node name="Vbox" type="VBoxContainer" parent="Debug"]
 layout_mode = 0
@@ -61,3 +60,9 @@ script = ExtResource("5_kdubu")
 
 [node name="Air" type="Node" parent="FSM"]
 script = ExtResource("6_kdubu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-4, 2.38419e-07)
+scale = Vector2(0.96875, 0.96875)
+sprite_frames = ExtResource("6_d21ai")
+animation = &"fall"
