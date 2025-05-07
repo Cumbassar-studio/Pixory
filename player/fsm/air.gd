@@ -22,6 +22,14 @@ func inner_physics_process(delta):
 	else:
 		player.velocity.x = move_toward(player.velocity.x, 0, player.JUMP_INNERT)
 
+	# Смена направления спрайта
+	if direction < 0 and not player.animation.is_flipped_h():
+		player.animation.set_flip_h(true)
+		player.u_turn.emit("left")
+	elif direction > 0 and player.animation.is_flipped_h():
+		player.animation.set_flip_h(false)
+		player.u_turn.emit("right")
+
 	# Прыжок при нажатии кнопки "вверх"
 	if Input.is_action_just_pressed("ui_up") and player.JUMP_COUNT < player.MAX_JUMPS:
 		state_machine.change_to("Air", {"do_jump": true})

@@ -14,3 +14,5 @@ const SPRINT_SPEED: float = 400.0
 
 var gravity: float = 980
 @onready var animation = $AnimatedSprite2D
+
+signal u_turn

@@ -27,6 +27,14 @@ func inner_physics_process(_delta) -> void:
 			player.animation.play("walk")
 	else:
 		player.animation.stop()
+	
+	# Смена направления спрайта
+	if direction < 0 and not player.animation.is_flipped_h():
+		player.animation.set_flip_h(true)
+		player.u_turn.emit("left")
+	elif direction > 0 and player.animation.is_flipped_h():
+		player.animation.set_flip_h(false)
+		player.u_turn.emit("right")
 
 	# Перемещаем персонажа
 	player.move_and_slide()
