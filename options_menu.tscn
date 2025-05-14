@@ -1,0 +1,265 @@
+[gd_scene load_steps=13 format=3 uid="uid://cvbvigppmney5"]
+
+[ext_resource type="Texture2D" uid="uid://cqx63awlk0epx" path="res://assets/ui/option_panel.svg" id="1_3rc2d"]
+[ext_resource type="Script" path="res://UI/ST/volume_slider.gd" id="2_saqf5"]
+[ext_resource type="Script" path="res://UI/brightness_slider.gd" id="3_7cwr0"]
+[ext_resource type="Script" path="res://UI/ST/music_volume.gd" id="3_i7deu"]
+[ext_resource type="Script" path="res://UI/ST/sfx_volume.gd" id="4_fhxje"]
+[ext_resource type="Script" path="res://UI/window_mode_option.gd" id="4_rfxbp"]
+[ext_resource type="Texture2D" uid="uid://6ck4oirwahuh" path="res://assets/ui/exit_norm.svg" id="5_ph2ai"]
+[ext_resource type="Texture2D" uid="uid://dannvr7lhar8u" path="res://assets/ui/exit_hover .svg" id="6_d0e6k"]
+[ext_resource type="Texture2D" uid="uid://bp85pkspj3eyc" path="res://assets/ui/exit_focused.svg" id="7_sf2t2"]
+[ext_resource type="Script" path="res://UI/back_button.gd" id="8_0urbe"]
+[ext_resource type="Script" path="res://UI/window_mode_resolution.gd" id="9_f4t14"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_16van"]
+texture = ExtResource("1_3rc2d")
+
+[node name="Options_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -247.0
+offset_right = 201.0
+offset_bottom = 210.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_16van")
+
+[node name="master_volume" type="HSlider" parent="Panel"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 23.0
+offset_top = -157.5
+offset_right = -23.0
+offset_bottom = -141.5
+grow_horizontal = 2
+grow_vertical = 2
+max_value = 2.5
+step = 0.01
+value = 1.0
+script = ExtResource("2_saqf5")
+
+[node name="Label" type="Label" parent="Panel/master_volume"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -176.5
+offset_top = -43.0
+offset_right = -2.5
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+text = "Master volume"
+
+[node name="music volume" type="HSlider" parent="Panel"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 23.5
+offset_top = -92.5
+offset_right = -22.5
+offset_bottom = -76.5
+grow_horizontal = 2
+grow_vertical = 2
+max_value = 2.5
+step = 0.01
+value = 1.0
+script = ExtResource("3_i7deu")
+
+[node name="Label2" type="Label" parent="Panel/music volume"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -177.0
+offset_top = -43.0
+offset_right = -3.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+text = "Music volume"
+
+[node name="SFX_volume" type="HSlider" parent="Panel"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 23.5
+offset_top = -23.5
+offset_right = -22.5
+offset_bottom = -7.5
+grow_horizontal = 2
+grow_vertical = 2
+max_value = 2.5
+step = 0.01
+value = 1.0
+script = ExtResource("4_fhxje")
+
+[node name="Label3" type="Label" parent="Panel/SFX_volume"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -177.0
+offset_top = -47.0
+offset_right = -3.0
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+text = "SFX volume"
+
+[node name="Brightness_slider" type="HSlider" parent="Panel"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 24.0
+offset_top = 44.5
+offset_right = -22.0
+offset_bottom = 60.5
+grow_horizontal = 2
+grow_vertical = 2
+min_value = 0.2
+max_value = 1.8
+step = 0.01
+value = 1.0
+script = ExtResource("3_7cwr0")
+
+[node name="Label4" type="Label" parent="Panel/Brightness_slider"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -177.5
+offset_top = -47.0
+offset_right = -3.5
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+text = "Brightness"
+
+[node name="WindowModeOption" type="OptionButton" parent="Panel"]
+layout_mode = 0
+offset_left = 218.0
+offset_top = 314.0
+offset_right = 355.0
+offset_bottom = 347.0
+theme_override_font_sizes/font_size = 18
+script = ExtResource("4_rfxbp")
+
+[node name="Label5" type="Label" parent="Panel/WindowModeOption"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -251.5
+offset_top = -16.5
+offset_right = -77.5
+offset_bottom = 17.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+text = "Window mode"
+
+[node name="WindowModeResolution" type="OptionButton" parent="Panel"]
+layout_mode = 0
+offset_left = 218.0
+offset_top = 365.0
+offset_right = 355.0
+offset_bottom = 398.0
+theme_override_font_sizes/font_size = 18
+script = ExtResource("9_f4t14")
+
+[node name="Label6" type="Label" parent="Panel/WindowModeResolution"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -251.5
+offset_top = -16.5
+offset_right = -77.5
+offset_bottom = 17.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+text = "Resolution"
+
+[node name="Back_button" type="TextureButton" parent="Panel"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = -49.0
+offset_right = 132.0
+offset_bottom = -9.0
+grow_vertical = 0
+texture_normal = ExtResource("5_ph2ai")
+texture_hover = ExtResource("6_d0e6k")
+texture_focused = ExtResource("7_sf2t2")
+ignore_texture_size = true
+stretch_mode = 4
+script = ExtResource("8_0urbe")
+
+[node name="Label" type="Label" parent="Panel/Back_button"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -18.0
+offset_top = -19.0
+offset_right = 18.0
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+text = "Exit"
+
+[connection signal="value_changed" from="Panel/master_volume" to="Panel/master_volume" method="_on_value_changed"]
+[connection signal="value_changed" from="Panel/music volume" to="Panel/music volume" method="_on_value_changed"]
+[connection signal="value_changed" from="Panel/SFX_volume" to="Panel/SFX_volume" method="_on_value_changed"]
+[connection signal="value_changed" from="Panel/Brightness_slider" to="Panel/Brightness_slider" method="_on_value_changed"]
+[connection signal="item_selected" from="Panel/WindowModeResolution" to="Panel/WindowModeResolution" method="_on_item_selected"]
+[connection signal="pressed" from="Panel/Back_button" to="Panel/Back_button" method="_on_pressed"]

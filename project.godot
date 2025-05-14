@@ -12,7 +12,11 @@ config_version=5
 
 config/name="Новый игровой проект"
 run/main_scene="res://main_menu.tscn"
-config/features=PackedStringArray("4.4", "Forward Plus")
+config/features=PackedStringArray("4.3", "Forward Plus")
+
+[audio]
+
+buses/default_bus_layout="res://assets/regulars/default_bus_layout.tres"
 
 [autoload]
 

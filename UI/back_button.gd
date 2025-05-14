@@ -1,6 +1,10 @@
 extends TextureButton
 
-@onready var settings_panel = $/root/main_menu/Main/Panel
+@onready var Options_menu=$"../.." as Control
+
+
+func _ready() -> void:
+	pass
 
 func _on_pressed() -> void:
-	settings_panel.visible = not settings_panel.visible
+	Options_menu.visible=false

@@ -1,28 +1,28 @@
 [gd_scene load_steps=19 format=3 uid="uid://tbis5euj4iv1"]
 
-[ext_resource type="Texture2D" uid="uid://oobuf7q7abgm" path="res://assets/ui/exit_norm.svg" id="1_ircbi"]
-[ext_resource type="Texture2D" uid="uid://fod0o3otii7d" path="res://assets/ui/exit_focused.svg" id="2_birr8"]
-[ext_resource type="Texture2D" uid="uid://dt3o6gfohs1y4" path="res://assets/ui/exit_hover .svg" id="3_nyld8"]
-[ext_resource type="Texture2D" uid="uid://2dtumh8rqlvr" path="res://assets/ui/info_norm.svg" id="4_2oby3"]
-[ext_resource type="Texture2D" uid="uid://ienmdm1s0g82" path="res://assets/ui/info_focused.svg" id="4_64hd5"]
-[ext_resource type="Script" uid="uid://j6fkinaokeno" path="res://UI/exit_button.gd" id="4_fbibh"]
-[ext_resource type="Texture2D" uid="uid://bfidkr247ho7g" path="res://assets/ui/info_hover.svg" id="5_d4mjj"]
-[ext_resource type="Texture2D" uid="uid://dwi6xldhlb2e5" path="res://assets/ui/main_norm.svg" id="6_iynud"]
-[ext_resource type="Texture2D" uid="uid://d00dnj8t7prk5" path="res://assets/ui/main_hover.svg" id="7_5wu7t"]
-[ext_resource type="Texture2D" uid="uid://cl3vagypnejy8" path="res://assets/ui/main_focused.svg" id="8_n2xqc"]
-[ext_resource type="Texture2D" uid="uid://wme0dr3d0hjp" path="res://assets/ui/option_panel.svg" id="11_38aya"]
-[ext_resource type="Script" uid="uid://dsvsxctt71vx7" path="res://UI/start_button.gd" id="11_gtee4"]
-[ext_resource type="Script" uid="uid://cso2m1d1exevv" path="res://UI/volume_slider.gd" id="12_jo2kr"]
-[ext_resource type="Script" uid="uid://b236301h4nr8o" path="res://UI/brightness_slider.gd" id="13_hnw3a"]
-[ext_resource type="Script" uid="uid://clrtpx48mlx3a" path="res://UI/window_mode_option.gd" id="13_le4fq"]
-[ext_resource type="Script" uid="uid://dj4fa45p0bfwu" path="res://UI/back_button.gd" id="16_raxg3"]
+[ext_resource type="Texture2D" uid="uid://6ck4oirwahuh" path="res://assets/ui/exit_norm.svg" id="1_ircbi"]
+[ext_resource type="Texture2D" uid="uid://bp85pkspj3eyc" path="res://assets/ui/exit_focused.svg" id="2_birr8"]
+[ext_resource type="Texture2D" uid="uid://dannvr7lhar8u" path="res://assets/ui/exit_hover .svg" id="3_nyld8"]
+[ext_resource type="Texture2D" uid="uid://byj078kpm6nms" path="res://assets/ui/info_norm.svg" id="4_2oby3"]
+[ext_resource type="Texture2D" uid="uid://bctlyjsnfcpif" path="res://assets/ui/info_focused.svg" id="4_64hd5"]
+[ext_resource type="Script" path="res://UI/MAIN/exit_button.gd" id="4_fbibh"]
+[ext_resource type="Texture2D" uid="uid://bhsi2qniyfk4s" path="res://assets/ui/info_hover.svg" id="5_d4mjj"]
+[ext_resource type="Texture2D" uid="uid://c2es728ldxtbd" path="res://assets/ui/main_norm.svg" id="6_iynud"]
+[ext_resource type="Texture2D" uid="uid://ct4f6a64dg4ad" path="res://assets/ui/main_hover.svg" id="7_5wu7t"]
+[ext_resource type="Texture2D" uid="uid://b0dpe2ylwh0vn" path="res://assets/ui/main_focused.svg" id="8_n2xqc"]
+[ext_resource type="Script" path="res://UI/MAIN/option_button.gd" id="11_2gsle"]
+[ext_resource type="Texture2D" uid="uid://cqx63awlk0epx" path="res://assets/ui/option_panel.svg" id="11_38aya"]
+[ext_resource type="Script" path="res://UI/MAIN/start_button.gd" id="11_gtee4"]
+[ext_resource type="PackedScene" uid="uid://cvbvigppmney5" path="res://options_menu.tscn" id="13_ltpkb"]
+[ext_resource type="Script" path="res://UI/MAIN/info_button.gd" id="16_7x26i"]
+[ext_resource type="AudioStream" uid="uid://vb8m6amqdpoi" path="res://assets/music/main_menu_st.mp3" id="18_br46f"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tst4o"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_camam"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kxhev"]
 texture = ExtResource("11_38aya")
 
-[node name="main_menu" type="Control"]
+[node name="Main_menu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -89,6 +89,7 @@ texture_hover = ExtResource("5_d4mjj")
 texture_focused = ExtResource("4_64hd5")
 ignore_texture_size = true
 stretch_mode = 4
+script = ExtResource("16_7x26i")
 
 [node name="Label" type="Label" parent="Main/Info_button"]
 layout_mode = 1
@@ -124,7 +125,7 @@ texture_hover = ExtResource("7_5wu7t")
 texture_focused = ExtResource("8_n2xqc")
 ignore_texture_size = true
 stretch_mode = 4
-script = ExtResource("16_raxg3")
+script = ExtResource("11_2gsle")
 
 [node name="Label" type="Label" parent="Main/Option_button"]
 layout_mode = 1
@@ -173,88 +174,78 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 24
 text = "Start Game"
 
-[node name="Panel" type="Panel" parent="Main"]
+[node name="Options_menu" parent="." instance=ExtResource("13_ltpkb")]
 visible = false
-layout_mode = 0
-offset_left = -156.0
-offset_top = -176.0
-offset_right = 245.0
-offset_bottom = 141.0
-theme_override_styles/panel = SubResource("StyleBoxTexture_camam")
-
-[node name="Volume_slider" type="HSlider" parent="Main/Panel"]
 layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = 23.0
-offset_top = -140.0
-offset_right = -23.0
-offset_bottom = -124.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("12_jo2kr")
 
-[node name="Brightness_slider" type="HSlider" parent="Main/Panel"]
-layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = 23.0
-offset_top = -86.0
-offset_right = -23.0
-offset_bottom = -70.0
-grow_horizontal = 2
-grow_vertical = 2
-min_value = 0.5
-max_value = 1.4
-step = 0.01
-value = 1.0
-script = ExtResource("13_hnw3a")
+[node name="MusicStreamMenu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_br46f")
+volume_db = -16.73
+pitch_scale = 0.99
+autoplay = true
+bus = &"main_menu"
 
-[node name="WindowModeOption" type="OptionButton" parent="Main/Panel"]
-layout_mode = 0
-offset_left = 23.0
-offset_top = 143.0
-offset_right = 62.0
-offset_bottom = 176.0
-script = ExtResource("13_le4fq")
-
-[node name="Back_button" type="TextureButton" parent="Main/Panel"]
-layout_mode = 0
-offset_top = 272.0
-offset_right = 124.0
-offset_bottom = 312.0
-texture_normal = ExtResource("1_ircbi")
-texture_hover = ExtResource("3_nyld8")
-texture_focused = ExtResource("2_birr8")
-ignore_texture_size = true
-stretch_mode = 4
-script = ExtResource("16_raxg3")
-
-[node name="Label" type="Label" parent="Main/Panel/Back_button"]
+[node name="info_panel" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -18.0
-offset_top = -19.0
-offset_right = 18.0
-offset_bottom = 19.0
+offset_left = -234.5
+offset_top = -72.0
+offset_right = 234.5
+offset_bottom = 72.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_kxhev")
+
+[node name="Label" type="Label" parent="info_panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -222.5
+offset_right = 222.5
+offset_bottom = 108.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 24
+text = "This is first version of almost done GUI
+Deploy version: x.x.?
+For reports:"
+
+[node name="Info_button" type="TextureButton" parent="info_panel"]
+offset_left = 300.5
+offset_top = 96.0
+offset_right = 459.5
+offset_bottom = 154.0
+texture_normal = ExtResource("4_2oby3")
+texture_hover = ExtResource("5_d4mjj")
+texture_focused = ExtResource("4_64hd5")
+ignore_texture_size = true
+stretch_mode = 4
+script = ExtResource("16_7x26i")
+
+[node name="Label" type="Label" parent="info_panel/Info_button"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -26.0
+offset_right = 20.0
+offset_bottom = 26.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 20
-text = "Exit"
+text = "info"
 
 [connection signal="pressed" from="Main/Exit_button" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="Main/Exit_button" to="Main/Exit_button" method="_on_pressed"]
+[connection signal="pressed" from="Main/Info_button" to="Main/Info_button" method="_on_pressed"]
+[connection signal="pressed" from="Main/Info_button" to="info_panel/Info_button" method="_on_info_button_pressed"]
 [connection signal="pressed" from="Main/Option_button" to="Main/Option_button" method="_on_pressed"]
 [connection signal="pressed" from="Main/Start_button" to="Main/Start_button" method="_on_pressed"]
-[connection signal="value_changed" from="Main/Panel/Volume_slider" to="." method="_on_volume_slider_value_changed"]
-[connection signal="value_changed" from="Main/Panel/Volume_slider" to="Main/Panel/Volume_slider" method="_on_value_changed"]
-[connection signal="value_changed" from="Main/Panel/Brightness_slider" to="Main/Panel/Brightness_slider" method="_on_value_changed"]
-[connection signal="pressed" from="Main/Panel/Back_button" to="Main/Panel/Back_button" method="_on_pressed"]
+[connection signal="pressed" from="info_panel/Info_button" to="info_panel/Info_button" method="_on_pressed"]
