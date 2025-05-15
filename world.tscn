@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://doqkdbk05537s"]
+[gd_scene load_steps=4 format=3 uid="uid://doqkdbk05537s"]
 
 [ext_resource type="PackedScene" uid="uid://bc5mtwe42ldm0" path="res://node_2d.tscn" id="1_f3sb7"]
+[ext_resource type="PackedScene" uid="uid://dv3u7vyxgys5i" path="res://enemy/enemy.tscn" id="2_fj7yv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gv5m4"]
 size = Vector2(1154, 127)
@@ -67,5 +68,8 @@ offset_right = 1157.0
 offset_bottom = 126.0
 color = Color(0.306763, 0.455412, 0.94476, 1)
 
-[node name="Node2D" parent="." instance=ExtResource("1_f3sb7")]
+[node name="Player" parent="." groups=["player"] instance=ExtResource("1_f3sb7")]
 position = Vector2(184, 234)
+
+[node name="Enemy" parent="." instance=ExtResource("2_fj7yv")]
+position = Vector2(604, 267)
