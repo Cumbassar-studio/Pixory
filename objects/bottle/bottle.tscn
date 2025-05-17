@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://dv1ua4ohbdd30"]
+
+[ext_resource type="Script" uid="uid://cgu6cnqw3vpko" path="res://objects/bottle/bottle.gd" id="1_3mlqn"]
+[ext_resource type="Texture2D" uid="uid://e6f3y2w8w3wn" path="res://objects/bottle/bottle_converted.png" id="1_r41hm"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3mlqn"]
+height = 36.0
+
+[node name="Bottle" type="Area2D"]
+script = ExtResource("1_3mlqn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_r41hm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_3mlqn")
