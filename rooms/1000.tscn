@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://c58h15w2gahf2"]
+
+[ext_resource type="Texture2D" uid="uid://cdrkm7rok35wc" path="res://rooms/darker_image (1) (1).png" id="1_dlbs0"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_42pim"]
+texture = ExtResource("1_dlbs0")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ibuva"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_42pim")
+
+[node name="1000" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_ibuva")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 0, 0, 65536, 0, 0, 131072, 0, 0, 196608, 0, 0, 262144, 0, 0, 327680, 0, 0, 393216, 0, 0, 458752, 0, 0, 524288, 0, 0, 589824, 0, 0, 655360, 0, 0, 720896, 0, 0, 786432, 0, 0, 851968, 0, 0, 917504, 0, 0, 983040, 0, 0, 1048576, 0, 0, 1048577, 0, 0, 1048578, 0, 0, 1048579, 0, 0, 1048580, 0, 0, 1048581, 0, 0, 1048582, 0, 0, 1048583, 0, 0, 1048584, 0, 0, 1048585, 0, 0, 1048586, 0, 0, 1048587, 0, 0, 1048588, 0, 0, 1048589, 0, 0, 1048590, 0, 0, 1048591, 0, 0, 1048592, 0, 0, 983056, 0, 0, 917520, 0, 0, 851984, 0, 0, 786448, 0, 0, 720912, 0, 0, 655376, 0, 0, 589840, 0, 0, 524304, 0, 0, 458768, 0, 0, 393232, 0, 0, 327696, 0, 0, 262160, 0, 0, 196624, 0, 0, 131088, 0, 0, 65552, 0, 0, 16, 0, 0, 196609, 196608, 805306370, 196610, 196608, 805306370, 196611, 196608, 805306370, 196622, 196608, 805306370, 196623, 196608, 805306370, 196621, 196608, 805306370, 327686, 65536, 1342177281, 327687, 196608, 805306370, 327690, 65536, 1610612737, 327688, 196608, 805306370, 327689, 196608, 805306370, 524292, 65536, 1610612737, 524291, 65536, 1342177281, 524301, 65536, 1610612737, 524300, 65536, 1342177281, 720897, 196608, 805306370, 720898, 196608, 805306370, 720910, 196608, 805306370, 720911, 196608, 805306370, 851973, 65536, 1342177281, 851974, 65536, 1610612737, 851979, 65536, 1610612737, 851978, 65536, 1342177281)
+
+[node name="UpExit" type="Marker2D" parent="."]
+position = Vector2(136, 0)

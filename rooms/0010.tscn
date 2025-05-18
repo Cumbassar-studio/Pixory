@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://b36a28dgvx04s"]
+
+[ext_resource type="Texture2D" uid="uid://cdrkm7rok35wc" path="res://rooms/darker_image (1) (1).png" id="1_uuns5"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nak4h"]
+texture = ExtResource("1_uuns5")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_btxag"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_nak4h")
+
+[node name="0010" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_btxag")
+format = 2
+layer_0/tile_data = PackedInt32Array(16, 0, 0, 1048592, 0, 0, 1048576, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 65536, 0, 0, 131072, 0, 0, 196608, 0, 0, 262144, 0, 0, 327680, 0, 0, 393216, 0, 0, 458752, 0, 0, 524288, 0, 0, 589824, 0, 0, 655360, 0, 0, 720896, 0, 0, 786432, 0, 0, 851968, 0, 0, 917504, 0, 0, 983040, 0, 0, 65552, 0, 0, 131088, 0, 0, 196624, 0, 0, 262160, 0, 0, 327696, 0, 0, 393232, 0, 0, 458768, 0, 0, 524304, 0, 0, 589840, 0, 0, 655376, 0, 0, 720912, 0, 0, 786448, 0, 0, 851984, 0, 0, 917520, 0, 0, 983056, 0, 0, 327685, 196608, 805306370, 327686, 196608, 805306370, 327690, 196608, 805306370, 327691, 196608, 805306370, 393223, 196608, 0, 720901, 131072, 805306370, 720902, 131072, 805306370, 720903, 0, 0, 720904, 0, 0, 720905, 0, 0, 720906, 131072, 805306370, 720907, 131072, 805306370, 786439, 0, 0, 786440, 0, 0, 786441, 0, 0, 589825, 131072, 805306370, 589826, 131072, 805306370, 589838, 131072, 805306370, 589839, 131072, 805306370, 65537, 0, 0, 65551, 0, 0, 917505, 131072, 805306370, 917506, 131072, 805306370, 917518, 131072, 805306370, 917519, 131072, 805306370, 1048583, 0, 0, 1048584, 0, 0, 1048585, 0, 0, 1048582, 0, 0, 1048586, 0, 0, 458759, 0, 0, 524295, 0, 0, 589831, 0, 0, 655367, 0, 0, 458761, 0, 0, 524297, 0, 0, 589833, 0, 0, 655369, 0, 0, 458760, 0, 0, 524296, 0, 0, 589832, 0, 0, 655368, 0, 0, 327687, 0, 0, 327688, 0, 0, 327689, 0, 0, 393224, 0, 0, 393225, 0, 0)
+
+[node name="DownExit" type="Marker2D" parent="."]
+position = Vector2(136, 272)
