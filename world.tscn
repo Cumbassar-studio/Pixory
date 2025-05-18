@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://doqkdbk05537s"]
 
 [ext_resource type="PackedScene" uid="uid://bc5mtwe42ldm0" path="res://node_2d.tscn" id="1_f3sb7"]
-[ext_resource type="PackedScene" uid="uid://dv3u7vyxgys5i" path="res://enemy/enemy.tscn" id="2_fj7yv"]
+[ext_resource type="PackedScene" uid="uid://dv3u7vyxgys5i" path="res://enemies/enemy1/enemy.tscn" id="2_fj7yv"]
 [ext_resource type="PackedScene" uid="uid://bktf62tjor4y3" path="res://objects/medkit/medkit.tscn" id="3_tlwt5"]
 [ext_resource type="PackedScene" uid="uid://dv1ua4ohbdd30" path="res://objects/bottle/bottle.tscn" id="4_aqk2v"]
 
@@ -74,7 +74,7 @@ color = Color(0.306763, 0.455412, 0.94476, 1)
 position = Vector2(184, 234)
 
 [node name="Enemy" parent="." instance=ExtResource("2_fj7yv")]
-position = Vector2(639, 277)
+position = Vector2(672, 275)
 
 [node name="Area2D" parent="." instance=ExtResource("3_tlwt5")]
 position = Vector2(1068, 275)
