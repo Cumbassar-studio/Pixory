@@ -36,3 +36,8 @@ func spawn_pickup():
 		pickup.position = global_position + offset
 
 	get_tree().current_scene.add_child(pickup)
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.has_method("take_damage"):
+		body.take_damage(10)  # Наносим урон 10 единиц

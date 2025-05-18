@@ -6,6 +6,10 @@ func enter(_msg: Dictionary={}):
 	$"../../Debug/Vbox/L_state".set_text(name)
 func inner_physics_process(_delta):
 	
+	if Input.is_action_just_pressed("throw_item") and player.has_crowbar:
+		player.throw_crowbar()
+		player.animation.play("throw_crowbar")
+
 	if not player.is_on_floor():
 		state_machine.change_to("Air")
 	
@@ -17,5 +21,8 @@ func inner_physics_process(_delta):
 
 	if Input.is_action_pressed("ui_left") or Input.is_action_pressed("ui_right"):
 		state_machine.change_to("Run")
-	
-	player.animation.play("idle")
+		
+	if player.has_crowbar:
+		player.animation.play("idle_crowbar")
+	else:
+		player.animation.play("idle")

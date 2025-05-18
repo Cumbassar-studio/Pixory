@@ -100,9 +100,7 @@ script = ExtResource("6_1jxqw")
 position = Vector2(-4, 2.38419e-07)
 scale = Vector2(0.96875, 0.96875)
 sprite_frames = ExtResource("6_d21ai")
-animation = &"punch"
-frame = 2
-frame_progress = 1.0
+animation = &"fall"
 
 [connection signal="area_entered" from="Zones/Punch" to="FSM/Punch" method="_on_punch_area_entered"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="FSM/Punch" method="_on_animated_sprite_2d_animation_finished"]

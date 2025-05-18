@@ -1,21 +1,22 @@
-[gd_resource type="SpriteFrames" load_steps=17 format=3 uid="uid://chw0ds5ueqvjt"]
+[gd_resource type="SpriteFrames" load_steps=18 format=3 uid="uid://chw0ds5ueqvjt"]
 
-[ext_resource type="Texture2D" uid="uid://41k6jukfuchb" path="res://player/Sprites/Walk/iddle.png" id="1_d5ik0"]
-[ext_resource type="Texture2D" uid="uid://tjf763fkr17y" path="res://player/Sprites/Jump/jump_stage_1.png" id="2_h1aow"]
-[ext_resource type="Texture2D" uid="uid://cxxv4m1q17j2t" path="res://player/Sprites/Run/run_3.png" id="3_ohu4k"]
-[ext_resource type="Texture2D" uid="uid://vck814m74xxl" path="res://player/Sprites/Jump/Fall.png" id="3_sglrc"]
-[ext_resource type="Texture2D" uid="uid://433vb2may1d8" path="res://player/Sprites/Jump/jump_1.png" id="4_v2udu"]
-[ext_resource type="Texture2D" uid="uid://ccrcjjg1th8oo" path="res://player/Sprites/Punch/punch_1.png" id="5_nfuiq"]
-[ext_resource type="Texture2D" uid="uid://chj1kxk0u3vud" path="res://player/Sprites/Run/run_6.png" id="5_sglrc"]
-[ext_resource type="Texture2D" uid="uid://dvdjn1a3kmu0j" path="res://player/Sprites/Punch/punch_2.png" id="6_h3cgn"]
-[ext_resource type="Texture2D" uid="uid://jujw71nkojxy" path="res://player/Sprites/Walk/walk_right_1.png" id="7_h3cgn"]
-[ext_resource type="Texture2D" uid="uid://dmcwcmrolwqub" path="res://player/Sprites/Punch/punch_3.png" id="7_nfuiq"]
-[ext_resource type="Texture2D" uid="uid://7j61k17wnicf" path="res://player/Sprites/Walk/walk_right_2.png" id="8_ne53x"]
-[ext_resource type="Texture2D" uid="uid://c3ud7vhdlnv58" path="res://player/Sprites/Walk/walk_right_5.png" id="9_mjvhx"]
-[ext_resource type="Texture2D" uid="uid://psdw7ntowrf5" path="res://player/Sprites/Run/run_middle.png" id="12_4a15q"]
-[ext_resource type="Texture2D" uid="uid://bdgfvrjw07kls" path="res://player/Sprites/Walk/walk_cr_1.png" id="14_mjvhx"]
-[ext_resource type="Texture2D" uid="uid://bup38eovpqton" path="res://player/Sprites/Walk/walk_cr_2.png" id="15_v2udu"]
-[ext_resource type="Texture2D" uid="uid://ckapsvhoapxhs" path="res://player/Sprites/Walk/walk_cr_3.png" id="16_b1fxq"]
+[ext_resource type="Texture2D" uid="uid://dn3xjuo10vy83" path="res://player/Sprites/Walk/iddle.png" id="1_d5ik0"]
+[ext_resource type="Texture2D" uid="uid://b6yrbvponblcm" path="res://player/Sprites/Jump/jump_stage_1.png" id="2_h1aow"]
+[ext_resource type="Texture2D" uid="uid://bj25kkprj0mi" path="res://player/Sprites/Run/run_3.png" id="3_ohu4k"]
+[ext_resource type="Texture2D" uid="uid://dgxprwby5qe0g" path="res://player/Sprites/Jump/Fall.png" id="3_sglrc"]
+[ext_resource type="Texture2D" uid="uid://vkpis6t2c2kf" path="res://player/Sprites/Walk/idle_crowbar.png" id="4_b1fxq"]
+[ext_resource type="Texture2D" uid="uid://deeg1i0m8fv53" path="res://player/Sprites/Jump/jump_1.png" id="4_v2udu"]
+[ext_resource type="Texture2D" uid="uid://ru7oleicpxyf" path="res://player/Sprites/Punch/punch_1.png" id="5_nfuiq"]
+[ext_resource type="Texture2D" uid="uid://dcewquu02k2n0" path="res://player/Sprites/Run/run_6.png" id="5_sglrc"]
+[ext_resource type="Texture2D" uid="uid://7stoq8cjspqq" path="res://player/Sprites/Punch/punch_2.png" id="6_h3cgn"]
+[ext_resource type="Texture2D" uid="uid://dwa88qyh3qpqe" path="res://player/Sprites/Walk/walk_right_1.png" id="7_h3cgn"]
+[ext_resource type="Texture2D" uid="uid://c57qbyxlqox00" path="res://player/Sprites/Punch/punch_3.png" id="7_nfuiq"]
+[ext_resource type="Texture2D" uid="uid://c3pqbhqt4ep6c" path="res://player/Sprites/Walk/walk_right_2.png" id="8_ne53x"]
+[ext_resource type="Texture2D" uid="uid://3xt4li64xomy" path="res://player/Sprites/Walk/walk_right_5.png" id="9_mjvhx"]
+[ext_resource type="Texture2D" uid="uid://coidumyt7dd52" path="res://player/Sprites/Run/run_middle.png" id="12_4a15q"]
+[ext_resource type="Texture2D" uid="uid://22gopd70defq" path="res://player/Sprites/Walk/walk_cr_1.png" id="14_mjvhx"]
+[ext_resource type="Texture2D" uid="uid://b3ecmjeqo5wxq" path="res://player/Sprites/Walk/walk_cr_2.png" id="15_v2udu"]
+[ext_resource type="Texture2D" uid="uid://d2qp14yf763t2" path="res://player/Sprites/Walk/walk_cr_3.png" id="16_b1fxq"]
 
 [resource]
 animations = [{
@@ -40,10 +41,23 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("4_b1fxq")
+}],
+"loop": true,
+"name": &"idle_crowbar",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("4_v2udu")
 }],
 "loop": true,
 "name": &"jump",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
 "speed": 5.0
 }, {
 "frames": [{

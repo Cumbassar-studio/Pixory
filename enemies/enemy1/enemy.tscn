@@ -1,11 +1,11 @@
 [gd_scene load_steps=12 format=3 uid="uid://dv3u7vyxgys5i"]
 
 [ext_resource type="Script" uid="uid://db6mqfky4a0ts" path="res://enemies/enemy1/enemy.gd" id="1_4gyqm"]
-[ext_resource type="Texture2D" uid="uid://8aqwui1ys5sv" path="res://enemies/enemy1/enemy1_converted.png" id="3_1wwld"]
+[ext_resource type="Texture2D" uid="uid://c6fx71tjxh2bt" path="res://enemies/enemy1/enemy1_converted.png" id="3_1wwld"]
 [ext_resource type="Script" uid="uid://d18rv73re8xb3" path="res://enemies/enemy1/hitbox.gd" id="3_qi2p4"]
-[ext_resource type="Texture2D" uid="uid://ll1fufbp7gdh" path="res://enemies/enemy1/enemy1walk1.png" id="4_y5vj3"]
-[ext_resource type="Texture2D" uid="uid://cc0ehf7bfr8eb" path="res://enemies/enemy1/enemy1walk2.png" id="5_5ffra"]
-[ext_resource type="Texture2D" uid="uid://u4pd0cgbbtfs" path="res://enemies/enemy1/enemy1walk3.png" id="6_e355f"]
+[ext_resource type="Texture2D" uid="uid://bvgx3jq26bdct" path="res://enemies/enemy1/enemy1walk1.png" id="4_y5vj3"]
+[ext_resource type="Texture2D" uid="uid://cnfwlvvrbownq" path="res://enemies/enemy1/enemy1walk2.png" id="5_5ffra"]
+[ext_resource type="Texture2D" uid="uid://m5spcgchqvm5" path="res://enemies/enemy1/enemy1walk3.png" id="6_e355f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4gyqm"]
 size = Vector2(62, 36)

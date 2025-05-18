@@ -7,7 +7,10 @@ func enter(msg: Dictionary={}):
 
 func inner_physics_process(delta):
 	
-	# Анимация прыжка и падения
+	if Input.is_action_just_pressed("throw_item") and player.has_crowbar:
+		player.throw_crowbar()
+		player.animation.play("throw_crowbar")
+		
 	if player.velocity.y < 0:
 		player.animation.play("jump")
 	else:
