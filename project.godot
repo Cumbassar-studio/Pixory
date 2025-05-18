@@ -26,7 +26,6 @@ GlobalWorldEnviroment="*res://world_enviroment.tscn"
 
 window/size/viewport_width=854
 window/size/viewport_height=480
-window/size/mode=3
 window/stretch/mode="viewport"
 
 [input]

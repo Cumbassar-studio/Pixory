@@ -19,7 +19,7 @@ func _ready() -> void:
 	# Создаём таймер
 	var timer = Timer.new()
 	add_child(timer)
-	timer.wait_time = 3.0
+	timer.wait_time = 0.2
 	timer.connect("timeout", Callable(self, "_on_timer_timeout"))
 	timer.start()
 	

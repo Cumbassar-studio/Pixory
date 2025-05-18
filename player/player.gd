@@ -6,20 +6,21 @@ const JUMP_VELOCITY: float = -400.0
 const ACCELERATION: float = 0.5
 const RUN_INNERT: int = 8
 const JUMP_INNERT: int = 8
+const BULLET_SPEED = 1000
+
 var JUMP_COUNT: int = 0
 const MAX_JUMPS: int = 2
 const SPRINT_SPEED: float = 400.0
 var bottles: int = 0
-
 var max_health: int = 10
 var health: int = max_health
 var gravity: float = 980
-
 var has_crowbar: bool = true # Предполагаем, что игрок начинает с ломом
 
 @onready var animation = $AnimatedSprite2D
 @onready var bottle_label = $Debug/Vbox/BottleLabel
 @onready var health_bar = $Debug/HealthBar
+@export var crowbar: PackedScene
 
 func _ready():
 	health = max_health
@@ -60,10 +61,6 @@ func die() -> void:
 	queue_free()
 
 signal u_turn # Этот сигнал объявлен, но не используется в предоставленном коде.
-
-@export var crowbar: PackedScene
-
-const BULLET_SPEED = 1000 # скорость полёта, можно менять
 
 func throw_crowbar():
 	if not has_crowbar:

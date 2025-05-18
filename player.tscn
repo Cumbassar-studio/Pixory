@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://kbkn6eypw5wp"]
 
 [ext_resource type="Script" uid="uid://vmwmd8lghf82" path="res://player/player.gd" id="1_0e48y"]
-[ext_resource type="Script" uid="uid://b31au1pm1re43" path="res://health_bar.gd" id="2_d21ai"]
+[ext_resource type="Script" uid="uid://b31au1pm1re43" path="res://player/health_bar.gd" id="2_d21ai"]
 [ext_resource type="PackedScene" uid="uid://dktlv7jofrvc2" path="res://weapon/crowbar.tscn" id="2_dw050"]
 [ext_resource type="Script" uid="uid://bvlu1vebabi6h" path="res://player/fsm/fsm.gd" id="3_epypp"]
 [ext_resource type="Script" uid="uid://bodj11vbwp4a6" path="res://player/fsm/idle.gd" id="4_q6r6c"]

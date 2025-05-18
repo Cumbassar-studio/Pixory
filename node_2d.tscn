@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://cumi05viloc3f"]
+[gd_scene load_steps=9 format=3 uid="uid://cumi05viloc3f"]
 
 [ext_resource type="Script" uid="uid://vmwmd8lghf82" path="res://player/player.gd" id="1_0e48y"]
+[ext_resource type="Script" uid="uid://b31au1pm1re43" path="res://player/health_bar.gd" id="2_d21ai"]
 [ext_resource type="Script" uid="uid://bvlu1vebabi6h" path="res://player/fsm/fsm.gd" id="3_epypp"]
 [ext_resource type="Script" uid="uid://bodj11vbwp4a6" path="res://player/fsm/idle.gd" id="4_q6r6c"]
 [ext_resource type="Script" uid="uid://cl81kh3up3l02" path="res://player/fsm/run.gd" id="5_kdubu"]
@@ -45,6 +46,18 @@ text = "state"
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
 text = "dir"
+
+[node name="BottleLabel" type="Label" parent="Debug/Vbox"]
+layout_mode = 2
+
+[node name="HealthBar" type="ProgressBar" parent="Debug"]
+layout_mode = 0
+offset_left = -18.0
+offset_top = 31.0
+offset_right = 54.0
+offset_bottom = 38.0
+show_percentage = false
+script = ExtResource("2_d21ai")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 

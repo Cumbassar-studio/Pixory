@@ -1,16 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://doqkdbk05537s"]
+[gd_scene load_steps=7 format=3 uid="uid://doqkdbk05537s"]
 
 [ext_resource type="PackedScene" uid="uid://cumi05viloc3f" path="res://node_2d.tscn" id="1_aqk2v"]
 [ext_resource type="PackedScene" uid="uid://dv3u7vyxgys5i" path="res://enemies/enemy1/enemy.tscn" id="2_036b0"]
 [ext_resource type="PackedScene" uid="uid://bktf62tjor4y3" path="res://objects/medkit/medkit.tscn" id="3_dwbse"]
 [ext_resource type="PackedScene" uid="uid://dv1ua4ohbdd30" path="res://objects/bottle/bottle.tscn" id="4_pkg7o"]
+[ext_resource type="PackedScene" uid="uid://drxlc46fc0vdx" path="res://pickupitem.tscn" id="5_036b0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gv5m4"]
 size = Vector2(1154, 127)
 
 [node name="world" type="Node2D" groups=["player"]]
 
-[node name="player" parent="." instance=ExtResource("1_aqk2v")]
+[node name="player" parent="." groups=["player"] instance=ExtResource("1_aqk2v")]
 position = Vector2(154, 46)
 
 [node name="platform" type="StaticBody2D" parent="."]
@@ -87,3 +88,6 @@ position = Vector2(1341, 203)
 
 [node name="Bottle3" parent="." instance=ExtResource("4_pkg7o")]
 position = Vector2(1377, 201)
+
+[node name="Area2D2" parent="." instance=ExtResource("5_036b0")]
+position = Vector2(1626, 199)
