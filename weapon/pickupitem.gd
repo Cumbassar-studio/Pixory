@@ -12,6 +12,7 @@ func _process(delta: float) -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
+	print("Вошёл объект:", body.name)
 	if body.name == "Player":  # или проверка по группе/классу
 		body.has_crowbar = true
 		print("Лом подобран")

@@ -7,6 +7,7 @@ const ACCELERATION: float = 0.5
 const RUN_INNERT: int = 8
 const JUMP_INNERT: int = 8
 const BULLET_SPEED = 1000
+const ATTACK_INNERT: float = 500.0
 
 var JUMP_COUNT: int = 0
 const MAX_JUMPS: int = 2
@@ -15,12 +16,13 @@ var bottles: int = 0
 var max_health: int = 10
 var health: int = max_health
 var gravity: float = 980
-var has_crowbar: bool = true # Предполагаем, что игрок начинает с ломом
+var has_crowbar: bool = false 
 
 @onready var animation = $AnimatedSprite2D
 @onready var bottle_label = $Debug/Vbox/BottleLabel
 @onready var health_bar = $Debug/HealthBar
-@export var crowbar: PackedScene
+@onready var crowbar: PackedScene = preload("res://weapon/crowbar.tscn")
+@onready var punch_zone = $Zones/Punch
 
 func _ready():
 	health = max_health
@@ -63,17 +65,19 @@ func die() -> void:
 signal u_turn # Этот сигнал объявлен, но не используется в предоставленном коде.
 
 func throw_crowbar():
-	if not has_crowbar:
+	if not has_crowbar or crowbar == null:
 		return
 	has_crowbar = false
 
 	var cb = crowbar.instantiate() as RigidBody2D
-	cb.position = global_position
 
 	var dir = -1 if animation.is_flipped_h() else 1
-	var direction = Vector2(dir, -0.1).normalized() # Почти горизонтально, немного вверх
+	var direction = Vector2(dir, -0.1).normalized()
+
+	# сместим немного в сторону от игрока, чтобы не было коллизии сразу
+	cb.position = global_position + Vector2(20 * dir, -5)
 
 	cb.linear_velocity = direction * BULLET_SPEED
-	cb.angular_velocity = 30 # вращение может быть сильнее для пули
+	cb.angular_velocity = 20  # Можно увеличить если нужен "полет с кручением"
 
 	get_tree().current_scene.add_child(cb)
