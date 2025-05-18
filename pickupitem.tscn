@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://drxlc46fc0vdx"]
+
+[ext_resource type="Texture2D" uid="uid://daj0ueqmsqbme" path="res://weapon/Crowbar.png" id="1_ol2e3"]
+[ext_resource type="Script" uid="uid://maur657dnsxp" path="res://weapon/pickupitem.gd" id="1_os1r0"]
+[ext_resource type="Shader" uid="uid://bt05gfngief7x" path="res://lightning.gdshader" id="2_8ggqa"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0e7ka"]
+shader = ExtResource("2_8ggqa")
+shader_parameter/emission_color = Vector4(1, 1, 0.2, 1)
+shader_parameter/pulse_speed = 2.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_os1r0"]
+size = Vector2(13, 8)
+
+[node name="Area2D" type="Area2D"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_os1r0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_0e7ka")
+texture = ExtResource("1_ol2e3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 2)
+shape = SubResource("RectangleShape2D_os1r0")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

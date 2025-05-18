@@ -8,7 +8,10 @@ func inner_physics_process(_delta):
 	
 	if not player.is_on_floor():
 		state_machine.change_to("Air")
-
+	
+	if Input.is_action_just_pressed("ui_punch"):
+		state_machine.change_to("Punch")
+		
 	if Input.is_action_just_pressed("ui_up"):
 		state_machine.change_to("Air", {do_jump = true})
 

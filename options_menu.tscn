@@ -1,14 +1,14 @@
 [gd_scene load_steps=13 format=3 uid="uid://dyvml1u6l6nnf"]
 
-[ext_resource type="Texture2D" uid="uid://cnp7dvoj7bryv" path="res://assets/ui/option_panel.svg" id="1_3rc2d"]
+[ext_resource type="Texture2D" uid="uid://dayq4pjx6n56d" path="res://assets/ui/option_panel.svg" id="1_3rc2d"]
 [ext_resource type="Script" path="res://UI/ST/volume_slider.gd" id="2_saqf5"]
 [ext_resource type="Script" uid="uid://b236301h4nr8o" path="res://UI/brightness_slider.gd" id="3_7cwr0"]
 [ext_resource type="Script" path="res://UI/ST/music_volume.gd" id="3_i7deu"]
 [ext_resource type="Script" path="res://UI/ST/sfx_volume.gd" id="4_fhxje"]
 [ext_resource type="Script" uid="uid://clrtpx48mlx3a" path="res://UI/window_mode_option.gd" id="4_rfxbp"]
-[ext_resource type="Texture2D" uid="uid://bf8n8fhpo6qlq" path="res://assets/ui/exit_norm.svg" id="5_ph2ai"]
-[ext_resource type="Texture2D" uid="uid://dmwnthvcmrs5b" path="res://assets/ui/exit_hover .svg" id="6_d0e6k"]
-[ext_resource type="Texture2D" uid="uid://c14tpy3ncy5sy" path="res://assets/ui/exit_focused.svg" id="7_sf2t2"]
+[ext_resource type="Texture2D" uid="uid://dr4d1h5qfrqqv" path="res://assets/ui/exit_norm.svg" id="5_ph2ai"]
+[ext_resource type="Texture2D" uid="uid://etbwo84b1wx7" path="res://assets/ui/exit_hover .svg" id="6_d0e6k"]
+[ext_resource type="Texture2D" uid="uid://c3hpj8x5lwrm1" path="res://assets/ui/exit_focused.svg" id="7_sf2t2"]
 [ext_resource type="Script" uid="uid://dj4fa45p0bfwu" path="res://UI/back_button.gd" id="8_0urbe"]
 [ext_resource type="Script" path="res://UI/window_mode_resolution.gd" id="9_f4t14"]
 

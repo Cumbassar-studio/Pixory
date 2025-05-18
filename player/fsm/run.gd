@@ -8,8 +8,17 @@ func inner_physics_process(_delta) -> void:
 	var is_sprinting = Input.is_action_pressed("ui_shift")
 	
 	var target_speed = player.SPRINT_SPEED if is_sprinting else player.SPEED
+	
+	# Выброс лома
+	if Input.is_action_just_pressed("throw_item") and player.has_crowbar:
+		player.throw_crowbar()
+		player.animation.play("throw_crowbar")
+	
 
-	# Логика движения
+	if Input.is_action_just_pressed("ui_punch"):
+		state_machine.change_to("Punch")
+		return
+
 	if direction != 0:
 		player.velocity.x = lerp(player.velocity.x, direction * target_speed, player.ACCELERATION)
 	else:
@@ -19,12 +28,15 @@ func inner_physics_process(_delta) -> void:
 	$"../../Debug/Vbox/L_dir".set_text(str(direction))
 	$"../../Debug/Vbox/L_vel".set_text(str(player.velocity))
 
-	# Запускаем анимацию
+	# Запускаем анимацию (с учётом лома)
 	if direction != 0:
-		if is_sprinting:
-			player.animation.play("run")
+		if player.has_crowbar:
+			player.animation.play("walk_with_crowbar")
 		else:
-			player.animation.play("walk")
+			if is_sprinting:
+				player.animation.play("run")
+			else:
+				player.animation.play("walk")
 	else:
 		player.animation.stop()
 	

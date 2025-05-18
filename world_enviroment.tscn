@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c7lhsu8yqhwf0"]
 
 [ext_resource type="Script" path="res://UI/world_enviroment.gd" id="1_yiks2"]
-[ext_resource type="PackedScene" uid="uid://cvbvigppmney5" path="res://options_menu.tscn" id="3_n6ldq"]
+[ext_resource type="PackedScene" uid="uid://dyvml1u6l6nnf" path="res://options_menu.tscn" id="3_n6ldq"]
 
 [sub_resource type="Environment" id="Environment_3kc6k"]
 background_mode = 3
