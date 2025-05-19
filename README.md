@@ -3,4 +3,8 @@
 # Pixory
 </div>
 
-![Logotype](C:\Users\User\Downloads)
+![Logotype](./assets/ui/kumbossar.webp)
+<div align="center">
+
+# Лучшая игра МГТУ СТАНКИН
+</div>
