@@ -4,7 +4,7 @@ extends CharacterBody2D
 @export var gravity: float = 1000.0
 @export var max_chase_distance: float = 500.0
 @onready var detection_area: Area2D = $DetectionArea
-@onready var hitbox = $Hitbox
+@onready var hitbox: Area2D = $Hitbox
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 @onready var edge_detector: RayCast2D = $EdgeDetector
 
@@ -24,6 +24,7 @@ func _ready() -> void:
 	timer.start()
 	
 func _physics_process(delta) -> void:
+	
 	# Гравитация
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -69,15 +70,15 @@ func turn_around():
 		anim.flip_h = direction < 0
 	can_turn = false
 
-func _on_hitbox_body_entered(body: Node) -> void:
-	if body.has_method("take_damage"):
+func _on_hitbox_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player"):
 		body.take_damage(1)
 
-func _on_detection_area_body_entered(body: Node) -> void:
+func _on_detection_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		player = body
 
-func _on_detection_area_body_exited(body: Node) -> void:
+func _on_detection_area_body_exited(body: Node2D) -> void:
 	if body == player:
 		player = null
 

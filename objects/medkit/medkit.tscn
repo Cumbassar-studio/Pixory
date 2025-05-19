@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bktf62tjor4y3"]
 
-[ext_resource type="Texture2D" uid="uid://cr3dee4sb57uk" path="res://objects/medkit/medkit_converted.png" id="1_0x77m"]
+[ext_resource type="Texture2D" uid="uid://b61aytm27k1c7" path="res://objects/medkit/medkit_converted.png" id="1_0x77m"]
 [ext_resource type="Script" uid="uid://bhesbdymlxo87" path="res://objects/medkit/medkit.gd" id="1_uaoio"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uaoio"]

@@ -27,12 +27,12 @@ var has_crowbar: bool = false
 func _ready():
 	health = max_health
 	if health_bar:
+		health_bar.min_value = 0
 		health_bar.max_value = max_health
-		health_bar.value = max_health
-	update_health_bar()
+		health_bar.value = health
 
 func update_health_bar():
-	if health_bar: # возможно, лишняя проверка
+	if health_bar:
 		health_bar.value = health
 
 func _process(delta):
@@ -47,7 +47,7 @@ func take_damage(amount: int) -> void:
 	health -= amount
 	health = max(0, health)
 	print("Игрок получил урон! Осталось HP: ", health)
-	# emit_signal("health_changed", health, max_health) # Этот сигнал вызывается, но не объявлен.
+	#emit_signal("health_changed", health, max_health) # Этот сигнал вызывается, но не объявлен.
 	update_health_bar()
 	if health <= 0:
 		die()

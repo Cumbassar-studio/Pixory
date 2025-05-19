@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dktlv7jofrvc2"]
 
 [ext_resource type="Script" uid="uid://d2o4sgr4w4fwp" path="res://weapon/crowbar.gd" id="1_pskn5"]
-[ext_resource type="Texture2D" uid="uid://bmr2tp3c5jr7d" path="res://weapon/Crowbar.png" id="1_y5jjg"]
+[ext_resource type="Texture2D" uid="uid://cibfu55wjbo5c" path="res://weapon/Crowbar.png" id="1_y5jjg"]
 [ext_resource type="PackedScene" uid="uid://drxlc46fc0vdx" path="res://pickupitem.tscn" id="2_530xy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pskn5"]

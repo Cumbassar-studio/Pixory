@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://drxlc46fc0vdx"]
 
-[ext_resource type="Texture2D" uid="uid://bmr2tp3c5jr7d" path="res://weapon/Crowbar.png" id="1_ol2e3"]
+[ext_resource type="Texture2D" uid="uid://cibfu55wjbo5c" path="res://weapon/Crowbar.png" id="1_ol2e3"]
 [ext_resource type="Script" uid="uid://maur657dnsxp" path="res://weapon/pickupitem.gd" id="1_os1r0"]
 [ext_resource type="Shader" uid="uid://bt05gfngief7x" path="res://lightning.gdshader" id="2_8ggqa"]
 

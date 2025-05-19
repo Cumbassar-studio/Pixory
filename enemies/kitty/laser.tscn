@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dbqmssldwcnd5"]
+
+[ext_resource type="Script" uid="uid://dr4oo7kv3th60" path="res://enemies/kitty/laser.gd" id="1_dc5sw"]
+[ext_resource type="Texture2D" uid="uid://bs8afnb7at76" path="res://enemies/kitty/laser.png" id="2_dc5sw"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_05tcs"]
+radius = 3.0
+height = 26.0
+
+[node name="Laser" type="Area2D"]
+script = ExtResource("1_dc5sw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_05tcs")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
+scale = Vector2(1, 2)
+texture = ExtResource("2_dc5sw")
