@@ -42,4 +42,5 @@ func _on_animated_sprite_2d_animation_finished():
 
 func _on_punch_area_entered(area: Area2D) -> void:
 	print(area.owner.name)
-	area.hit()
+	if area.has_method("hit"):
+		area.hit()

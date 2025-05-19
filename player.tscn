@@ -13,7 +13,8 @@
 radius = 7.0
 
 [node name="player" type="CharacterBody2D"]
-collision_layer = 3
+collision_layer = 15
+collision_mask = 3
 script = ExtResource("1_0e48y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -72,12 +73,14 @@ script = ExtResource("2_d21ai")
 [node name="Zones" type="Node2D" parent="."]
 
 [node name="Punch" type="Area2D" parent="Zones"]
-collision_layer = 8
-collision_mask = 8
+collision_layer = 15
+collision_mask = 10
 monitoring = false
 monitorable = false
 
 [node name="CollisonPolygon2D" type="CollisionPolygon2D" parent="Zones/Punch"]
+position = Vector2(2.64301, 0)
+scale = Vector2(1.29044, 1)
 polygon = PackedVector2Array(-4, -15, 13, -15, 13, 16, -4, 16)
 
 [node name="FSM" type="Node" parent="."]

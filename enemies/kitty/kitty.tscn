@@ -1,11 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://bl0onh2pg774u"]
+[gd_scene load_steps=13 format=3 uid="uid://bl0onh2pg774u"]
 
 [ext_resource type="Script" uid="uid://culxqkydxrjej" path="res://enemies/kitty/kitty.gd" id="1_2f6up"]
-[ext_resource type="Texture2D" uid="uid://34e4vg160dxa" path="res://enemies/kitty/enemy2_detect.png.png" id="2_wed3f"]
-[ext_resource type="Texture2D" uid="uid://dgumkwjp5iia6" path="res://enemies/kitty/enemy2_detect2.png.png" id="3_drkja"]
-[ext_resource type="Texture2D" uid="uid://bswk7aeqwiu62" path="res://enemies/kitty/enemy2_detect3.png.png" id="4_457xt"]
-[ext_resource type="Texture2D" uid="uid://c1u228fbwi6dx" path="res://enemies/kitty/enemy2_converted.png.png" id="5_54a8c"]
-[ext_resource type="Texture2D" uid="uid://c24buiql6tsuy" path="res://enemies/kitty/enemy2_idle.png.png" id="6_q4wm3"]
+[ext_resource type="Texture2D" uid="uid://dahx040xug3ph" path="res://enemies/kitty/enemy2_detect.png.png" id="2_wed3f"]
+[ext_resource type="Texture2D" uid="uid://cjpd5rbn5v4x6" path="res://enemies/kitty/enemy2_detect2.png.png" id="3_drkja"]
+[ext_resource type="Texture2D" uid="uid://bjuixub4s8hlr" path="res://enemies/kitty/enemy2_detect3.png.png" id="4_457xt"]
+[ext_resource type="Texture2D" uid="uid://8p75dk4sxgpr" path="res://enemies/kitty/enemy2_converted.png.png" id="5_54a8c"]
+[ext_resource type="Texture2D" uid="uid://bye31sb0otd7t" path="res://enemies/kitty/enemy2_idle.png.png" id="6_q4wm3"]
+[ext_resource type="Script" uid="uid://l48qtaxox1tr" path="res://enemies/kitty/progress_bar.gd" id="7_wed3f"]
+[ext_resource type="Script" uid="uid://b25pxkfsd33mw" path="res://enemies/kitty/hitbox.gd" id="8_drkja"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_aq7mf"]
 animations = [{
@@ -41,7 +43,12 @@ size = Vector2(38, 50)
 [sub_resource type="CircleShape2D" id="CircleShape2D_2f6up"]
 radius = 235.002
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wed3f"]
+size = Vector2(34, 48.5)
+
 [node name="Kitty" type="CharacterBody2D"]
+collision_layer = 11
+collision_mask = 11
 motion_mode = 1
 script = ExtResource("1_2f6up")
 
@@ -55,6 +62,8 @@ light_mask = 3
 shape = SubResource("RectangleShape2D_2f6up")
 
 [node name="DetectionArea" type="Area2D" parent="."]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
 light_mask = 3
@@ -65,3 +74,28 @@ shape = SubResource("CircleShape2D_2f6up")
 [node name="Timer" type="Timer" parent="."]
 
 [node name="Marker2D" type="Marker2D" parent="."]
+
+[node name="health_bar" type="ProgressBar" parent="."]
+offset_left = -28.0
+offset_top = -36.0
+offset_right = 28.0
+offset_bottom = -29.0
+show_percentage = false
+script = ExtResource("7_wed3f")
+
+[node name="HITBOX" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 8
+monitoring = false
+script = ExtResource("8_drkja")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HITBOX"]
+position = Vector2(1, -0.25)
+shape = SubResource("RectangleShape2D_wed3f")
+debug_color = Color(0.92549, 0.0431373, 0.0666667, 0.419608)
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[connection signal="body_entered" from="HITBOX" to="." method="_on_hitbox_body_entered"]

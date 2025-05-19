@@ -62,7 +62,8 @@ func die() -> void:
 	print("Игрок погиб!")
 	queue_free()
 
-signal u_turn # Этот сигнал объявлен, но не используется в предоставленном коде.
+signal u_turn
+
 
 func throw_crowbar():
 	if not has_crowbar or crowbar == null:

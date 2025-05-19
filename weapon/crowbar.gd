@@ -40,4 +40,4 @@ func spawn_pickup():
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.has_method("take_damage"):
-		body.take_damage(10)  # Наносим урон 10 единиц
+		body.take_damage(5)  # Наносим урон 10 единиц

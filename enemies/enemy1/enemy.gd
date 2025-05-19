@@ -7,10 +7,14 @@ extends CharacterBody2D
 @onready var hitbox: Area2D = $Hitbox
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 @onready var edge_detector: RayCast2D = $EdgeDetector
+@onready var health_bar = $ProgressBar
 
 var player: Node2D = null
 var direction: int = 1 
 var can_turn: bool = true
+
+var max_health: int = 10
+var health: int = max_health
 
 func _ready() -> void:
 	hitbox.body_entered.connect(_on_hitbox_body_entered)
@@ -22,6 +26,12 @@ func _ready() -> void:
 	timer.wait_time = 0.2
 	timer.connect("timeout", Callable(self, "_on_timer_timeout"))
 	timer.start()
+	
+	health = max_health
+	if health_bar:
+		health_bar.min_value = 0
+		health_bar.max_value = max_health
+		health_bar.value = health
 	
 func _physics_process(delta) -> void:
 	
@@ -84,4 +94,22 @@ func _on_detection_area_body_exited(body: Node2D) -> void:
 
 func _on_timer_timeout():
 	can_turn = true
-	#print("can_turn изменена на: ", can_turn)
+
+func take_damage(amount: int) -> void:
+	health -= amount
+	health = max(0, health)
+	print("Получен урон! HP осталось: ", health)
+	update_health_bar()
+	if health <= 0:
+		die()
+
+func die() -> void:
+	print("Персонаж погиб.")
+	queue_free()
+
+func take_hit():
+	take_damage(1)
+
+func update_health_bar():
+	if health_bar:
+		health_bar.value = health

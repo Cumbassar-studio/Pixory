@@ -1,10 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://dv3u7vyxgys5i"]
+[gd_scene load_steps=12 format=3 uid="uid://dv3u7vyxgys5i"]
 
 [ext_resource type="Script" uid="uid://db6mqfky4a0ts" path="res://enemies/enemy1/enemy.gd" id="1_4gyqm"]
-[ext_resource type="Texture2D" uid="uid://8aqwui1ys5sv" path="res://enemies/enemy1/enemy1_converted.png" id="3_1wwld"]
-[ext_resource type="Texture2D" uid="uid://ll1fufbp7gdh" path="res://enemies/enemy1/enemy1walk1.png" id="4_y5vj3"]
-[ext_resource type="Texture2D" uid="uid://cc0ehf7bfr8eb" path="res://enemies/enemy1/enemy1walk2.png" id="5_5ffra"]
-[ext_resource type="Texture2D" uid="uid://u4pd0cgbbtfs" path="res://enemies/enemy1/enemy1walk3.png" id="6_e355f"]
+[ext_resource type="Script" uid="uid://d18rv73re8xb3" path="res://enemies/enemy1/hitbox.gd" id="2_owcwl"]
+[ext_resource type="Texture2D" uid="uid://c6fx71tjxh2bt" path="res://enemies/enemy1/enemy1_converted.png" id="3_1wwld"]
+[ext_resource type="Texture2D" uid="uid://bvgx3jq26bdct" path="res://enemies/enemy1/enemy1walk1.png" id="4_y5vj3"]
+[ext_resource type="Texture2D" uid="uid://cnfwlvvrbownq" path="res://enemies/enemy1/enemy1walk2.png" id="5_5ffra"]
+[ext_resource type="Texture2D" uid="uid://m5spcgchqvm5" path="res://enemies/enemy1/enemy1walk3.png" id="6_e355f"]
+[ext_resource type="Script" uid="uid://bi3ynd6qqoe85" path="res://enemies/enemy1/progress_bar.gd" id="7_88q47"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4gyqm"]
 size = Vector2(62, 39)
@@ -48,7 +50,8 @@ animations = [{
 }]
 
 [node name="Enemy" type="CharacterBody2D"]
-collision_mask = 3
+collision_layer = 11
+collision_mask = 11
 script = ExtResource("1_4gyqm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -56,7 +59,9 @@ position = Vector2(-1, -6.5)
 shape = SubResource("RectangleShape2D_4gyqm")
 
 [node name="Hitbox" type="Area2D" parent="."]
-collision_mask = 3
+collision_layer = 9
+collision_mask = 11
+script = ExtResource("2_owcwl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2(-1, -6)
@@ -81,3 +86,11 @@ frame_progress = 0.743188
 [node name="EdgeDetector" type="RayCast2D" parent="."]
 position = Vector2(0, 12)
 target_position = Vector2(0, 28)
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = -39.0
+offset_top = -37.0
+offset_right = 39.0
+offset_bottom = -30.0
+show_percentage = false
+script = ExtResource("7_88q47")
