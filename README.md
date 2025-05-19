@@ -3,4 +3,4 @@
 # Pixory
 </div>
 
-![Logotype](./images/image.webp)
+![Logotype](C:\Users\User\Downloads)
