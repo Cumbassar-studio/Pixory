@@ -13,7 +13,7 @@ extends Node2D
 	preload("res://rooms/1111.tscn")   # Выходы во все стороны
 ]
 
-var room_size = Vector2(16, 16)  # Размер комнаты в тайлах
+var room_size = Vector2(53, 29)  # Размер комнаты в тайлах
 var spawned_rooms = []
 var rng = RandomNumberGenerator.new()
 var room_limit = 10
