@@ -12,7 +12,8 @@ size = Vector2(13, 8)
 size = Vector2(13, 8)
 
 [node name="Crowbar" type="RigidBody2D"]
-collision_mask = 3
+collision_layer = 9
+collision_mask = 11
 can_sleep = false
 script = ExtResource("1_pskn5")
 pickup_scene = ExtResource("2_530xy")
@@ -25,7 +26,8 @@ position = Vector2(-0.5, 2)
 shape = SubResource("RectangleShape2D_pskn5")
 
 [node name="Area2D" type="Area2D" parent="."]
-collision_mask = 2
+collision_layer = 9
+collision_mask = 10
 script = ExtResource("4_wbq8u")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]

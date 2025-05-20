@@ -3,8 +3,9 @@ extends StatePlayer
 func enter(msg: Dictionary={}):
 	if msg.has("do_jump"):
 		player.velocity.y = player.JUMP_VELOCITY
-		player.JUMP_COUNT += 1  # Увеличиваем счётчик прыжков
-
+		player.JUMP_COUNT += 1 
+		player.jump_sound.play()
+		
 func inner_physics_process(delta):
 	
 	if Input.is_action_just_pressed("throw_item") and player.has_crowbar:
@@ -13,6 +14,7 @@ func inner_physics_process(delta):
 		
 	if player.velocity.y < 0:
 		player.animation.play("jump")
+		
 	else:
 		player.animation.play("fall")
 	
@@ -39,8 +41,9 @@ func inner_physics_process(delta):
 
 	player.move_and_slide()
 
-	# Проверка на пол
+
 	if player.is_on_floor():
+		player.land_sound.play()
 		player.JUMP_COUNT = 0  # Сбрасываем счётчик прыжков при касании земли
 		if player.velocity.x == 0:
 			state_machine.change_to("Idle")

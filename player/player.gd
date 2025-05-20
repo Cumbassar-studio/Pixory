@@ -23,6 +23,8 @@ var has_crowbar: bool = false
 @onready var health_bar = $Debug/HealthBar
 @onready var crowbar: PackedScene = preload("res://weapon/crowbar.tscn")
 @onready var punch_zone = $Zones/Punch
+@onready var jump_sound = $jump_sound
+@onready var land_sound = $land_sound
 
 func _ready():
 	health = max_health
@@ -60,7 +62,9 @@ func heal(amount: int) -> void:
 
 func die() -> void:
 	print("Игрок погиб!")
+	get_tree().change_scene_to_file("res://UI/main_menu.tscn")
 	queue_free()
+	
 
 signal u_turn
 
