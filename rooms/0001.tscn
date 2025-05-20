@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://bc1sau4h38aet"]
 
-[ext_resource type="Texture2D" uid="uid://bosc8kpvlfhoj" path="res://rooms/darker_image (1) (1).png" id="1_lybvk"]
-[ext_resource type="Texture2D" uid="uid://bemryxih5654h" path="res://rooms/background all.png" id="1_pmya6"]
+[ext_resource type="Texture2D" uid="uid://cqsr4ar7h7fms" path="res://rooms/darker_image (1) (1).png" id="1_lybvk"]
+[ext_resource type="Texture2D" uid="uid://duere80hw54qq" path="res://rooms/background all.png" id="1_pmya6"]
 [ext_resource type="PackedScene" uid="uid://bl0onh2pg774u" path="res://enemies/kitty/kitty.tscn" id="2_wamki"]
 [ext_resource type="PackedScene" uid="uid://dv3u7vyxgys5i" path="res://enemies/enemy1/enemy.tscn" id="3_pmya6"]
 
@@ -65,6 +65,7 @@ gizmo_extents = 16.0
 
 [node name="Kitty" parent="." instance=ExtResource("2_wamki")]
 position = Vector2(799, 339)
+collision_layer = 15
 
 [node name="Enemy" parent="." instance=ExtResource("3_pmya6")]
 position = Vector2(435, 312)

@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://7066turf4nch"]
 
-[ext_resource type="Texture2D" uid="uid://bosc8kpvlfhoj" path="res://rooms/darker_image (1) (1).png" id="1_6svl5"]
-[ext_resource type="Texture2D" uid="uid://bemryxih5654h" path="res://rooms/background all.png" id="1_x72f1"]
+[ext_resource type="Texture2D" uid="uid://cqsr4ar7h7fms" path="res://rooms/darker_image (1) (1).png" id="1_6svl5"]
+[ext_resource type="Texture2D" uid="uid://duere80hw54qq" path="res://rooms/background all.png" id="1_x72f1"]
 [ext_resource type="PackedScene" uid="uid://kbkn6eypw5wp" path="res://player.tscn" id="3_5jyjg"]
 [ext_resource type="PackedScene" uid="uid://drxlc46fc0vdx" path="res://weapon/pickupitem.tscn" id="3_ivjoa"]
 [ext_resource type="PackedScene" uid="uid://dv3u7vyxgys5i" path="res://enemies/enemy1/enemy.tscn" id="4_x72f1"]
@@ -60,6 +60,7 @@ position = Vector2(705, 298)
 [node name="player" parent="." instance=ExtResource("3_5jyjg")]
 visibility_layer = 512
 position = Vector2(122, 192)
+collision_mask = 11
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 

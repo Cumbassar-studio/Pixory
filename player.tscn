@@ -13,7 +13,7 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rj586"]
 radius = 7.0
 
-[node name="player" type="CharacterBody2D"]
+[node name="player" type="CharacterBody2D" groups=["player"]]
 collision_layer = 15
 collision_mask = 3
 script = ExtResource("1_0e48y")
@@ -75,7 +75,7 @@ script = ExtResource("2_d21ai")
 
 [node name="Punch" type="Area2D" parent="Zones"]
 collision_layer = 15
-collision_mask = 10
+collision_mask = 11
 monitoring = false
 monitorable = false
 

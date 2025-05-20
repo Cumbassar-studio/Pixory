@@ -19,6 +19,8 @@ var max_health: int = 10
 var health: int = max_health
 
 func _ready() -> void:
+	if not is_in_group("player"):
+		add_to_group("player")
 	detection_area.body_entered.connect(_on_detection_area_body_entered)
 	detection_area.body_exited.connect(_on_detection_area_body_exited)
 	hitbox.area_entered.connect(_on_hitbox_area_entered)
@@ -98,10 +100,12 @@ func _shoot_laser():
 
 	var laser_scene = preload("res://enemies/kitty/laser.tscn")
 	var laser = laser_scene.instantiate()
-	laser.position = $Marker2D.position
-	laser.rotation = (player.position - position).angle()
+	laser.global_position = $Marker2D.global_position
+	laser.rotation = (player.global_position - laser.global_position).angle()
 	laser.velocity = Vector2(laser_speed, 0).rotated(laser.rotation)
-	add_child(laser)
+	get_tree().current_scene.add_child(laser)
+
+
 
 func _on_hitbox_area_entered(area: Area2D) -> void:
 	print("Вошёл объект: ", area.name)

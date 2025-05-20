@@ -1,11 +1,11 @@
 [gd_scene load_steps=13 format=3 uid="uid://bl0onh2pg774u"]
 
 [ext_resource type="Script" uid="uid://culxqkydxrjej" path="res://enemies/kitty/kitty.gd" id="1_2f6up"]
-[ext_resource type="Texture2D" uid="uid://cbo8muwbcfea1" path="res://enemies/kitty/enemy2_detect.png.png" id="2_wed3f"]
-[ext_resource type="Texture2D" uid="uid://cpt6vpwxngwlq" path="res://enemies/kitty/enemy2_detect2.png.png" id="3_drkja"]
-[ext_resource type="Texture2D" uid="uid://ctkqahemkoavy" path="res://enemies/kitty/enemy2_detect3.png.png" id="4_457xt"]
-[ext_resource type="Texture2D" uid="uid://fol8qqygl650" path="res://enemies/kitty/enemy2_converted.png.png" id="5_54a8c"]
-[ext_resource type="Texture2D" uid="uid://bb2tn83ffhpq8" path="res://enemies/kitty/enemy2_idle.png.png" id="6_q4wm3"]
+[ext_resource type="Texture2D" uid="uid://dahx040xug3ph" path="res://enemies/kitty/enemy2_detect.png.png" id="2_wed3f"]
+[ext_resource type="Texture2D" uid="uid://cjpd5rbn5v4x6" path="res://enemies/kitty/enemy2_detect2.png.png" id="3_drkja"]
+[ext_resource type="Texture2D" uid="uid://bjuixub4s8hlr" path="res://enemies/kitty/enemy2_detect3.png.png" id="4_457xt"]
+[ext_resource type="Texture2D" uid="uid://8p75dk4sxgpr" path="res://enemies/kitty/enemy2_converted.png.png" id="5_54a8c"]
+[ext_resource type="Texture2D" uid="uid://bye31sb0otd7t" path="res://enemies/kitty/enemy2_idle.png.png" id="6_q4wm3"]
 [ext_resource type="Script" uid="uid://l48qtaxox1tr" path="res://enemies/kitty/progress_bar.gd" id="7_wed3f"]
 [ext_resource type="Script" uid="uid://b25pxkfsd33mw" path="res://enemies/kitty/hitbox.gd" id="8_drkja"]
 
@@ -41,13 +41,12 @@ animations = [{
 size = Vector2(38, 50)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2f6up"]
-radius = 235.002
+radius = 68.0602
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wed3f"]
 size = Vector2(34, 48.5)
 
 [node name="Kitty" type="CharacterBody2D"]
-collision_layer = 11
 collision_mask = 11
 motion_mode = 1
 script = ExtResource("1_2f6up")
@@ -55,7 +54,7 @@ script = ExtResource("1_2f6up")
 [node name="animations" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_aq7mf")
-animation = &"idle"
+animation = &"anger"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 3
@@ -63,7 +62,7 @@ shape = SubResource("RectangleShape2D_2f6up")
 
 [node name="DetectionArea" type="Area2D" parent="."]
 collision_layer = 3
-collision_mask = 3
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
 light_mask = 3
@@ -98,5 +97,3 @@ debug_color = Color(0.92549, 0.0431373, 0.0666667, 0.419608)
 [node name="Label" type="Label" parent="."]
 offset_right = 40.0
 offset_bottom = 23.0
-
-[connection signal="body_entered" from="HITBOX" to="." method="_on_hitbox_body_entered"]

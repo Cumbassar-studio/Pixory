@@ -32,7 +32,7 @@ func _on_animated_sprite_2d_animation_finished():
 	player.punch_zone.set_monitoring(false)
 	if Input.is_action_just_pressed("ui_punch"):
 		state_machine.change_to("Punch")
-	elif Input.is_action_just_pressed("ui_jump"):
+	elif Input.is_action_just_pressed("ui_up"):
 		state_machine.change_to("Jump", {do_jump=true})
 	elif Input.is_action_pressed("ui_left") or Input.is_action_pressed("ui_right"):
 		state_machine.change_to("Run")
