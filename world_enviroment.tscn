@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://c7lhsu8yqhwf0"]
+[gd_scene load_steps=3 format=3 uid="uid://c7lhsu8yqhwf0"]
 
-[ext_resource type="Script" path="res://UI/world_enviroment.gd" id="1_yiks2"]
-[ext_resource type="PackedScene" uid="uid://dyvml1u6l6nnf" path="res://options_menu.tscn" id="3_n6ldq"]
+[ext_resource type="PackedScene" uid="uid://dyvml1u6l6nnf" path="res://UI/options_menu.tscn" id="1_pbv3v"]
 
 [sub_resource type="Environment" id="Environment_3kc6k"]
 background_mode = 3
@@ -9,9 +8,8 @@ adjustment_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment"]
 environment = SubResource("Environment_3kc6k")
-script = ExtResource("1_yiks2")
 
-[node name="Options_menu" parent="." instance=ExtResource("3_n6ldq")]
+[node name="Options_menu" parent="." instance=ExtResource("1_pbv3v")]
 visible = false
 
 [connection signal="child_exiting_tree" from="." to="." method="_on_child_exiting_tree"]

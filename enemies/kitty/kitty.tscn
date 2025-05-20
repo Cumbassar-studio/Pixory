@@ -1,11 +1,11 @@
 [gd_scene load_steps=13 format=3 uid="uid://bl0onh2pg774u"]
 
 [ext_resource type="Script" uid="uid://culxqkydxrjej" path="res://enemies/kitty/kitty.gd" id="1_2f6up"]
-[ext_resource type="Texture2D" uid="uid://dahx040xug3ph" path="res://enemies/kitty/enemy2_detect.png.png" id="2_wed3f"]
-[ext_resource type="Texture2D" uid="uid://cjpd5rbn5v4x6" path="res://enemies/kitty/enemy2_detect2.png.png" id="3_drkja"]
-[ext_resource type="Texture2D" uid="uid://bjuixub4s8hlr" path="res://enemies/kitty/enemy2_detect3.png.png" id="4_457xt"]
-[ext_resource type="Texture2D" uid="uid://8p75dk4sxgpr" path="res://enemies/kitty/enemy2_converted.png.png" id="5_54a8c"]
-[ext_resource type="Texture2D" uid="uid://bye31sb0otd7t" path="res://enemies/kitty/enemy2_idle.png.png" id="6_q4wm3"]
+[ext_resource type="Texture2D" uid="uid://cbo8muwbcfea1" path="res://enemies/kitty/enemy2_detect.png.png" id="2_wed3f"]
+[ext_resource type="Texture2D" uid="uid://cpt6vpwxngwlq" path="res://enemies/kitty/enemy2_detect2.png.png" id="3_drkja"]
+[ext_resource type="Texture2D" uid="uid://ctkqahemkoavy" path="res://enemies/kitty/enemy2_detect3.png.png" id="4_457xt"]
+[ext_resource type="Texture2D" uid="uid://fol8qqygl650" path="res://enemies/kitty/enemy2_converted.png.png" id="5_54a8c"]
+[ext_resource type="Texture2D" uid="uid://bb2tn83ffhpq8" path="res://enemies/kitty/enemy2_idle.png.png" id="6_q4wm3"]
 [ext_resource type="Script" uid="uid://l48qtaxox1tr" path="res://enemies/kitty/progress_bar.gd" id="7_wed3f"]
 [ext_resource type="Script" uid="uid://b25pxkfsd33mw" path="res://enemies/kitty/hitbox.gd" id="8_drkja"]
 
@@ -69,6 +69,7 @@ collision_mask = 3
 light_mask = 3
 visibility_layer = 3
 position = Vector2(1, 0)
+scale = Vector2(1.69987, 1.69987)
 shape = SubResource("CircleShape2D_2f6up")
 
 [node name="Timer" type="Timer" parent="."]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://kbkn6eypw5wp"]
+[gd_scene load_steps=11 format=3 uid="uid://kbkn6eypw5wp"]
 
 [ext_resource type="Script" uid="uid://vmwmd8lghf82" path="res://player/player.gd" id="1_0e48y"]
 [ext_resource type="Script" uid="uid://b31au1pm1re43" path="res://player/health_bar.gd" id="2_d21ai"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://dvwhjpcgmk0cs" path="res://player/fsm/punch.gd" id="6_1jxqw"]
 [ext_resource type="SpriteFrames" uid="uid://chw0ds5ueqvjt" path="res://player/player_animation.tres" id="6_d21ai"]
 [ext_resource type="Script" uid="uid://21e64kr0ijhc" path="res://player/fsm/air.gd" id="6_kdubu"]
+[ext_resource type="PackedScene" uid="uid://dyvml1u6l6nnf" path="res://UI/options_menu.tscn" id="9_b26j0"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rj586"]
 radius = 7.0
@@ -104,6 +105,10 @@ position = Vector2(-4, 2.38419e-07)
 scale = Vector2(0.96875, 0.96875)
 sprite_frames = ExtResource("6_d21ai")
 animation = &"fall"
+
+[node name="Options_menu" parent="." instance=ExtResource("9_b26j0")]
+visible = false
+visibility_layer = 513
 
 [connection signal="area_entered" from="Zones/Punch" to="FSM/Punch" method="_on_punch_area_entered"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="FSM/Punch" method="_on_animated_sprite_2d_animation_finished"]

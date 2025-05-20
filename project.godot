@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Новый игровой проект"
-run/main_scene="res://main_menu.tscn"
+run/main_scene="res://UI/main_menu.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
 
 [audio]
@@ -27,6 +27,10 @@ GlobalWorldEnviroment="*res://world_enviroment.tscn"
 window/size/viewport_width=854
 window/size/viewport_height=480
 window/stretch/mode="viewport"
+
+[global_group]
+
+player=""
 
 [input]
 

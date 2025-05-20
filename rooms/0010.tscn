@@ -1,6 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://b36a28dgvx04s"]
+[gd_scene load_steps=7 format=3 uid="uid://b36a28dgvx04s"]
 
-[ext_resource type="Texture2D" uid="uid://4hawy5ql32eo" path="res://rooms/darker_image (1) (1).png" id="1_uuns5"]
+[ext_resource type="Texture2D" uid="uid://bemryxih5654h" path="res://rooms/background all.png" id="1_6a5l6"]
+[ext_resource type="Texture2D" uid="uid://bosc8kpvlfhoj" path="res://rooms/darker_image (1) (1).png" id="1_uuns5"]
+[ext_resource type="PackedScene" uid="uid://dv3u7vyxgys5i" path="res://enemies/enemy1/enemy.tscn" id="2_btxag"]
+[ext_resource type="PackedScene" uid="uid://bl0onh2pg774u" path="res://enemies/kitty/kitty.tscn" id="3_6a5l6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nak4h"]
 texture = ExtResource("1_uuns5")
@@ -39,6 +42,13 @@ sources/0 = SubResource("TileSetAtlasSource_nak4h")
 
 [node name="0010" type="Node2D"]
 
+[node name="BackgroundAll2" type="Sprite2D" parent="."]
+position = Vector2(432, 240)
+scale = Vector2(0.84375, 0.46875)
+texture = ExtResource("1_6a5l6")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_btxag")
 format = 2
@@ -46,3 +56,12 @@ layer_0/tile_data = PackedInt32Array(16, 0, 0, 1048576, 0, 0, 0, 0, 0, 1, 0, 0, 
 
 [node name="DownExit" type="Marker2D" parent="."]
 position = Vector2(432, 480)
+
+[node name="Enemy" parent="." instance=ExtResource("2_btxag")]
+position = Vector2(409, 170)
+
+[node name="Kitty" parent="." instance=ExtResource("3_6a5l6")]
+position = Vector2(656, 242)
+
+[node name="Kitty2" parent="." instance=ExtResource("3_6a5l6")]
+position = Vector2(136, 418)

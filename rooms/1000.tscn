@@ -1,6 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://c58h15w2gahf2"]
+[gd_scene load_steps=7 format=3 uid="uid://c58h15w2gahf2"]
 
-[ext_resource type="Texture2D" uid="uid://4hawy5ql32eo" path="res://rooms/darker_image (1) (1).png" id="1_dlbs0"]
+[ext_resource type="Texture2D" uid="uid://bosc8kpvlfhoj" path="res://rooms/darker_image (1) (1).png" id="1_dlbs0"]
+[ext_resource type="Texture2D" uid="uid://bemryxih5654h" path="res://rooms/background all.png" id="1_trg71"]
+[ext_resource type="PackedScene" uid="uid://bl0onh2pg774u" path="res://enemies/kitty/kitty.tscn" id="2_ibuva"]
+[ext_resource type="PackedScene" uid="uid://dv3u7vyxgys5i" path="res://enemies/enemy1/enemy.tscn" id="3_trg71"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_42pim"]
 texture = ExtResource("1_dlbs0")
@@ -46,3 +49,19 @@ layer_0/tile_data = PackedInt32Array(0, 0, 0, 65536, 0, 0, 131072, 0, 0, 196608,
 
 [node name="UpExit" type="Marker2D" parent="."]
 position = Vector2(432, 0)
+
+[node name="Kitty" parent="." instance=ExtResource("2_ibuva")]
+position = Vector2(424, 422)
+
+[node name="Kitty2" parent="." instance=ExtResource("2_ibuva")]
+position = Vector2(547, 65)
+
+[node name="Enemy" parent="." instance=ExtResource("3_trg71")]
+position = Vector2(195, 429)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="BackgroundAll" type="Sprite2D" parent="ParallaxBackground"]
+position = Vector2(431.5, 240.5)
+scale = Vector2(0.842773, 0.469727)
+texture = ExtResource("1_trg71")

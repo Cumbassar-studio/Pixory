@@ -1,19 +1,21 @@
-[gd_scene load_steps=13 format=3 uid="uid://dyvml1u6l6nnf"]
+[gd_scene load_steps=15 format=3 uid="uid://dyvml1u6l6nnf"]
 
-[ext_resource type="Texture2D" uid="uid://dayq4pjx6n56d" path="res://assets/ui/option_panel.svg" id="1_3rc2d"]
-[ext_resource type="Script" path="res://UI/ST/volume_slider.gd" id="2_saqf5"]
-[ext_resource type="Script" uid="uid://b236301h4nr8o" path="res://UI/brightness_slider.gd" id="3_7cwr0"]
-[ext_resource type="Script" path="res://UI/ST/music_volume.gd" id="3_i7deu"]
-[ext_resource type="Script" path="res://UI/ST/sfx_volume.gd" id="4_fhxje"]
-[ext_resource type="Script" uid="uid://clrtpx48mlx3a" path="res://UI/window_mode_option.gd" id="4_rfxbp"]
-[ext_resource type="Texture2D" uid="uid://dr4d1h5qfrqqv" path="res://assets/ui/exit_norm.svg" id="5_ph2ai"]
-[ext_resource type="Texture2D" uid="uid://etbwo84b1wx7" path="res://assets/ui/exit_hover .svg" id="6_d0e6k"]
-[ext_resource type="Texture2D" uid="uid://c3hpj8x5lwrm1" path="res://assets/ui/exit_focused.svg" id="7_sf2t2"]
-[ext_resource type="Script" uid="uid://dj4fa45p0bfwu" path="res://UI/back_button.gd" id="8_0urbe"]
-[ext_resource type="Script" path="res://UI/window_mode_resolution.gd" id="9_f4t14"]
+[ext_resource type="Script" uid="uid://ckctovny8rb5r" path="res://UI/options_menu.gd" id="1_13cjo"]
+[ext_resource type="Texture2D" uid="uid://bs0wa3pjerv3i" path="res://assets/ui/option_panel.svg" id="1_l8r4g"]
+[ext_resource type="Script" uid="uid://bcsphc7l18lgx" path="res://UI/panel.gd" id="2_13cjo"]
+[ext_resource type="Script" path="res://UI/ST/volume_slider.gd" id="2_xdpr0"]
+[ext_resource type="Script" path="res://UI/ST/music_volume.gd" id="3_13cjo"]
+[ext_resource type="Script" path="res://UI/ST/sfx_volume.gd" id="4_7mtuf"]
+[ext_resource type="Script" uid="uid://b236301h4nr8o" path="res://UI/OPTION/brightness_slider.gd" id="5_ng0rr"]
+[ext_resource type="Script" uid="uid://clrtpx48mlx3a" path="res://UI/OPTION/window_mode_option.gd" id="6_d1leo"]
+[ext_resource type="Script" path="res://UI/OPTION/window_mode_resolution.gd" id="7_kgnc0"]
+[ext_resource type="Texture2D" uid="uid://cwtoeta1gclop" path="res://assets/ui/exit_norm.svg" id="8_itsdb"]
+[ext_resource type="Texture2D" uid="uid://cmadtlg7gvxrf" path="res://assets/ui/exit_hover .svg" id="9_8t0dh"]
+[ext_resource type="Texture2D" uid="uid://df3xy5smyhtuy" path="res://assets/ui/exit_focused.svg" id="10_stnnx"]
+[ext_resource type="Script" uid="uid://dj4fa45p0bfwu" path="res://UI/MAIN/back_button.gd" id="11_ba2k1"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_16van"]
-texture = ExtResource("1_3rc2d")
+texture = ExtResource("1_l8r4g")
 
 [node name="Options_menu" type="Control"]
 layout_mode = 3
@@ -25,6 +27,7 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
+script = ExtResource("1_13cjo")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -34,12 +37,13 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -200.0
-offset_top = -247.0
+offset_top = -230.0
 offset_right = 201.0
-offset_bottom = 210.0
+offset_bottom = 227.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_16van")
+script = ExtResource("2_13cjo")
 
 [node name="master_volume" type="HSlider" parent="Panel"]
 layout_mode = 1
@@ -56,7 +60,7 @@ grow_vertical = 2
 max_value = 2.5
 step = 0.01
 value = 1.0
-script = ExtResource("2_saqf5")
+script = ExtResource("2_xdpr0")
 
 [node name="Label" type="Label" parent="Panel/master_volume"]
 layout_mode = 1
@@ -89,7 +93,7 @@ grow_vertical = 2
 max_value = 2.5
 step = 0.01
 value = 1.0
-script = ExtResource("3_i7deu")
+script = ExtResource("3_13cjo")
 
 [node name="Label2" type="Label" parent="Panel/music volume"]
 layout_mode = 1
@@ -122,7 +126,7 @@ grow_vertical = 2
 max_value = 2.5
 step = 0.01
 value = 1.0
-script = ExtResource("4_fhxje")
+script = ExtResource("4_7mtuf")
 
 [node name="Label3" type="Label" parent="Panel/SFX_volume"]
 layout_mode = 1
@@ -156,7 +160,7 @@ min_value = 0.2
 max_value = 1.8
 step = 0.01
 value = 1.0
-script = ExtResource("3_7cwr0")
+script = ExtResource("5_ng0rr")
 
 [node name="Label4" type="Label" parent="Panel/Brightness_slider"]
 layout_mode = 1
@@ -181,7 +185,7 @@ offset_top = 314.0
 offset_right = 355.0
 offset_bottom = 347.0
 theme_override_font_sizes/font_size = 18
-script = ExtResource("4_rfxbp")
+script = ExtResource("6_d1leo")
 
 [node name="Label5" type="Label" parent="Panel/WindowModeOption"]
 layout_mode = 1
@@ -206,7 +210,7 @@ offset_top = 365.0
 offset_right = 355.0
 offset_bottom = 398.0
 theme_override_font_sizes/font_size = 18
-script = ExtResource("9_f4t14")
+script = ExtResource("7_kgnc0")
 
 [node name="Label6" type="Label" parent="Panel/WindowModeResolution"]
 layout_mode = 1
@@ -234,12 +238,12 @@ offset_top = -49.0
 offset_right = 132.0
 offset_bottom = -9.0
 grow_vertical = 0
-texture_normal = ExtResource("5_ph2ai")
-texture_hover = ExtResource("6_d0e6k")
-texture_focused = ExtResource("7_sf2t2")
+texture_normal = ExtResource("8_itsdb")
+texture_hover = ExtResource("9_8t0dh")
+texture_focused = ExtResource("10_stnnx")
 ignore_texture_size = true
 stretch_mode = 4
-script = ExtResource("8_0urbe")
+script = ExtResource("11_ba2k1")
 
 [node name="Label" type="Label" parent="Panel/Back_button"]
 layout_mode = 1

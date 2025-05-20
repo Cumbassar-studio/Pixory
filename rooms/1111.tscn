@@ -1,6 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://bp3tqy8g1apmp"]
+[gd_scene load_steps=9 format=3 uid="uid://bp3tqy8g1apmp"]
 
-[ext_resource type="Texture2D" uid="uid://4hawy5ql32eo" path="res://rooms/darker_image (1) (1).png" id="1_jedfh"]
+[ext_resource type="Texture2D" uid="uid://bemryxih5654h" path="res://rooms/background all.png" id="1_67y3l"]
+[ext_resource type="Texture2D" uid="uid://bosc8kpvlfhoj" path="res://rooms/darker_image (1) (1).png" id="1_jedfh"]
+[ext_resource type="PackedScene" uid="uid://bl0onh2pg774u" path="res://enemies/kitty/kitty.tscn" id="2_1rj3o"]
+[ext_resource type="PackedScene" uid="uid://dv3u7vyxgys5i" path="res://enemies/enemy1/enemy.tscn" id="3_jkhh1"]
+[ext_resource type="PackedScene" uid="uid://drxlc46fc0vdx" path="res://weapon/pickupitem.tscn" id="4_67y3l"]
+[ext_resource type="PackedScene" uid="uid://dv1ua4ohbdd30" path="res://objects/bottle/bottle.tscn" id="5_jkhh1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_klkp6"]
 texture = ExtResource("1_jedfh")
@@ -39,6 +44,13 @@ sources/0 = SubResource("TileSetAtlasSource_klkp6")
 
 [node name="1111" type="Node2D"]
 
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="BackgroundAll" type="Sprite2D" parent="ParallaxBackground"]
+position = Vector2(432, 240)
+scale = Vector2(0.84375, 0.46875)
+texture = ExtResource("1_67y3l")
+
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_yxl4r")
 format = 2
@@ -55,3 +67,27 @@ position = Vector2(432, 0)
 
 [node name="DownExit" type="Marker2D" parent="."]
 position = Vector2(432, 480)
+
+[node name="Kitty" parent="." instance=ExtResource("2_1rj3o")]
+position = Vector2(147, 374)
+
+[node name="Kitty2" parent="." instance=ExtResource("2_1rj3o")]
+position = Vector2(718, 373)
+
+[node name="Enemy" parent="." instance=ExtResource("3_jkhh1")]
+position = Vector2(183, 130)
+
+[node name="Enemy2" parent="." instance=ExtResource("3_jkhh1")]
+position = Vector2(693, 131)
+
+[node name="Kitty3" parent="." instance=ExtResource("2_1rj3o")]
+position = Vector2(444, 264)
+
+[node name="Area2D" parent="." instance=ExtResource("4_67y3l")]
+position = Vector2(205, 312)
+
+[node name="Area2D2" parent="." instance=ExtResource("4_67y3l")]
+position = Vector2(660, 310)
+
+[node name="Bottle" parent="." instance=ExtResource("5_jkhh1")]
+position = Vector2(435, 28)

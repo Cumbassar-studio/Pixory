@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dv3u7vyxgys5i" path="res://enemies/enemy1/enemy.tscn" id="2_036b0"]
 [ext_resource type="PackedScene" uid="uid://bktf62tjor4y3" path="res://objects/medkit/medkit.tscn" id="3_dwbse"]
 [ext_resource type="PackedScene" uid="uid://dv1ua4ohbdd30" path="res://objects/bottle/bottle.tscn" id="4_pkg7o"]
-[ext_resource type="PackedScene" uid="uid://drxlc46fc0vdx" path="res://pickupitem.tscn" id="5_036b0"]
+[ext_resource type="PackedScene" uid="uid://drxlc46fc0vdx" path="res://weapon/pickupitem.tscn" id="5_036b0"]
 [ext_resource type="PackedScene" uid="uid://kbkn6eypw5wp" path="res://player.tscn" id="5_dwbse"]
 [ext_resource type="PackedScene" uid="uid://bl0onh2pg774u" path="res://enemies/kitty/kitty.tscn" id="6_dwbse"]
 
@@ -92,7 +92,7 @@ position = Vector2(1626, 199)
 position = Vector2(1034, 270)
 
 [node name="player" parent="." groups=["player"] instance=ExtResource("5_dwbse")]
-position = Vector2(140, 267)
+position = Vector2(170, 252)
 
 [node name="Kitty" parent="." instance=ExtResource("6_dwbse")]
-position = Vector2(528, 257)
+position = Vector2(659, 254)
