@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://b56cng20bvfgy"]
+[gd_scene load_steps=8 format=3 uid="uid://b56cng20bvfgy"]
 
-[ext_resource type="Texture2D" uid="uid://bemryxih5654h" path="res://rooms/background all.png" id="1_dtu1j"]
-[ext_resource type="Texture2D" uid="uid://bosc8kpvlfhoj" path="res://rooms/darker_image (1) (1).png" id="1_krvk6"]
+[ext_resource type="Texture2D" uid="uid://behu3uh7jjnb5" path="res://assets/ui/background all.png" id="1_dtu1j"]
+[ext_resource type="Texture2D" uid="uid://ckdt8fejvjxkt" path="res://rooms/darker_image (1) (1).png" id="1_krvk6"]
 [ext_resource type="PackedScene" uid="uid://bl0onh2pg774u" path="res://enemies/kitty/kitty.tscn" id="2_kt4u2"]
 [ext_resource type="PackedScene" uid="uid://dv3u7vyxgys5i" path="res://enemies/enemy1/enemy.tscn" id="3_dtu1j"]
+[ext_resource type="PackedScene" uid="uid://dv1ua4ohbdd30" path="res://objects/bottle/bottle.tscn" id="5_g0kti"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b6sgn"]
 texture = ExtResource("1_krvk6")
@@ -70,3 +71,6 @@ position = Vector2(623, 421)
 
 [node name="Enemy" parent="." instance=ExtResource("3_dtu1j")]
 position = Vector2(429, 226)
+
+[node name="Bottle" parent="." instance=ExtResource("5_g0kti")]
+position = Vector2(402, 55)

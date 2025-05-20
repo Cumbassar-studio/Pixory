@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://bp3tqy8g1apmp"]
 
-[ext_resource type="Texture2D" uid="uid://bemryxih5654h" path="res://rooms/background all.png" id="1_67y3l"]
-[ext_resource type="Texture2D" uid="uid://bosc8kpvlfhoj" path="res://rooms/darker_image (1) (1).png" id="1_jedfh"]
+[ext_resource type="Texture2D" uid="uid://behu3uh7jjnb5" path="res://assets/ui/background all.png" id="1_67y3l"]
+[ext_resource type="Texture2D" uid="uid://ckdt8fejvjxkt" path="res://rooms/darker_image (1) (1).png" id="1_jedfh"]
 [ext_resource type="PackedScene" uid="uid://bl0onh2pg774u" path="res://enemies/kitty/kitty.tscn" id="2_1rj3o"]
 [ext_resource type="PackedScene" uid="uid://dv3u7vyxgys5i" path="res://enemies/enemy1/enemy.tscn" id="3_jkhh1"]
 [ext_resource type="PackedScene" uid="uid://drxlc46fc0vdx" path="res://weapon/pickupitem.tscn" id="4_67y3l"]

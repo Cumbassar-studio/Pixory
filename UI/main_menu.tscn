@@ -1,23 +1,25 @@
-[gd_scene load_steps=21 format=3 uid="uid://tbis5euj4iv1"]
+[gd_scene load_steps=23 format=3 uid="uid://tbis5euj4iv1"]
 
-[ext_resource type="Texture2D" uid="uid://dk22wtlko0ton" path="res://assets/ui/exit_norm.svg" id="1_ircbi"]
-[ext_resource type="Texture2D" uid="uid://cqip4ermmc8er" path="res://assets/ui/exit_focused.svg" id="2_birr8"]
-[ext_resource type="Texture2D" uid="uid://bpr8yd1nxanhk" path="res://UI/background.png" id="2_cwv5u"]
-[ext_resource type="Texture2D" uid="uid://1avm46wj7gkf" path="res://assets/ui/exit_hover .svg" id="3_nyld8"]
-[ext_resource type="Texture2D" uid="uid://df1jhpws61ri4" path="res://assets/ui/info_norm.svg" id="4_2oby3"]
-[ext_resource type="Texture2D" uid="uid://bss65ytgrtk4h" path="res://assets/ui/info_focused.svg" id="4_64hd5"]
+[ext_resource type="Texture2D" uid="uid://bqgu8o5tcvdnf" path="res://assets/ui/exit_norm.svg" id="1_ircbi"]
+[ext_resource type="Texture2D" uid="uid://daf7n02g85hyw" path="res://assets/ui/exit_focused.svg" id="2_birr8"]
+[ext_resource type="Texture2D" uid="uid://odr5scakvcyo" path="res://assets/ui/background.png" id="2_cwv5u"]
+[ext_resource type="Texture2D" uid="uid://doium5u47k2en" path="res://assets/ui/exit_hover .svg" id="3_nyld8"]
+[ext_resource type="Texture2D" uid="uid://bavkj3lktqirc" path="res://assets/ui/info_norm.svg" id="4_2oby3"]
+[ext_resource type="Texture2D" uid="uid://l2ktfcvnmxee" path="res://assets/ui/info_focused.svg" id="4_64hd5"]
 [ext_resource type="Script" path="res://UI/MAIN/exit_button.gd" id="4_fbibh"]
-[ext_resource type="Texture2D" uid="uid://n8dvy3eojvae" path="res://assets/ui/info_hover.svg" id="5_d4mjj"]
-[ext_resource type="Texture2D" uid="uid://cceet5771w5gp" path="res://assets/ui/main_norm.svg" id="6_iynud"]
-[ext_resource type="Texture2D" uid="uid://cevoguh2tapv4" path="res://assets/ui/main_hover.svg" id="7_5wu7t"]
-[ext_resource type="Texture2D" uid="uid://cdj42b45f51pf" path="res://assets/ui/main_focused.svg" id="8_n2xqc"]
+[ext_resource type="Texture2D" uid="uid://v18ow2crchkr" path="res://assets/ui/info_hover.svg" id="5_d4mjj"]
+[ext_resource type="Texture2D" uid="uid://bo0b64pvqxh14" path="res://assets/ui/main_norm.svg" id="6_iynud"]
+[ext_resource type="Texture2D" uid="uid://curv5dncbodab" path="res://assets/ui/main_hover.svg" id="7_5wu7t"]
+[ext_resource type="Texture2D" uid="uid://cwqpgmspl2myc" path="res://assets/ui/main_focused.svg" id="8_n2xqc"]
 [ext_resource type="Script" path="res://UI/MAIN/option_button.gd" id="11_2gsle"]
-[ext_resource type="Texture2D" uid="uid://dhrqykbf4tc3u" path="res://assets/ui/option_panel.svg" id="11_38aya"]
+[ext_resource type="Texture2D" uid="uid://da6a6sjswqoc" path="res://assets/ui/option_panel.svg" id="11_38aya"]
 [ext_resource type="Script" path="res://UI/MAIN/start_button.gd" id="11_gtee4"]
 [ext_resource type="PackedScene" uid="uid://dyvml1u6l6nnf" path="res://UI/options_menu.tscn" id="13_ltpkb"]
 [ext_resource type="Script" path="res://UI/MAIN/info_button.gd" id="16_7x26i"]
 [ext_resource type="Script" uid="uid://c2oef2aq1bvle" path="res://UI/INFO/clip_board.gd" id="17_8u0te"]
-[ext_resource type="AudioStream" uid="uid://3nwhy7d4c6oy" path="res://assets/music/main_menu_st.mp3" id="18_br46f"]
+[ext_resource type="AudioStream" uid="uid://ci67xyjbu8s8i" path="res://assets/music/main_menu_st.mp3" id="18_br46f"]
+[ext_resource type="Script" uid="uid://cje0dt4mwtv8w" path="res://UI/INFO/mail.gd" id="19_c2iqt"]
+[ext_resource type="Texture2D" uid="uid://c6t848j5cabbh" path="res://assets/ui/logo.png" id="19_cwv5u"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tst4o"]
 
@@ -261,6 +263,16 @@ text = "gigachador02.2@gmail.com"
 justification_flags = 0
 script = ExtResource("17_8u0te")
 
+[node name="Label3" type="Label" parent="info_panel"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 108.0
+offset_right = 115.0
+offset_bottom = 139.0
+theme_override_colors/font_color = Color(0.00784314, 0.101961, 0.556863, 1)
+text = "@Pixory"
+script = ExtResource("19_c2iqt")
+
 [node name="Popup" type="Popup" parent="info_panel"]
 gui_disable_input = true
 size = Vector2i(100, 28)
@@ -271,6 +283,11 @@ offset_right = 40.0
 offset_bottom = 23.0
 
 [node name="Timer" type="Timer" parent="info_panel"]
+
+[node name="Logo" type="Sprite2D" parent="."]
+position = Vector2(422, 61)
+scale = Vector2(0.164063, 0.111328)
+texture = ExtResource("19_cwv5u")
 
 [connection signal="pressed" from="Main/Exit_button" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="Main/Exit_button" to="Main/Exit_button" method="_on_pressed"]

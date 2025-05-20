@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://cuqxfl0dguk2f"]
+[gd_scene load_steps=9 format=3 uid="uid://cuqxfl0dguk2f"]
 
-[ext_resource type="Texture2D" uid="uid://bemryxih5654h" path="res://rooms/background all.png" id="1_r1l8j"]
-[ext_resource type="Texture2D" uid="uid://bosc8kpvlfhoj" path="res://rooms/darker_image (1) (1).png" id="1_tlmfi"]
+[ext_resource type="Texture2D" uid="uid://behu3uh7jjnb5" path="res://assets/ui/background all.png" id="1_r1l8j"]
+[ext_resource type="Texture2D" uid="uid://ckdt8fejvjxkt" path="res://rooms/darker_image (1) (1).png" id="1_tlmfi"]
 [ext_resource type="PackedScene" uid="uid://bl0onh2pg774u" path="res://enemies/kitty/kitty.tscn" id="2_75tki"]
 [ext_resource type="PackedScene" uid="uid://dv3u7vyxgys5i" path="res://enemies/enemy1/enemy.tscn" id="3_r1l8j"]
+[ext_resource type="PackedScene" uid="uid://dv1ua4ohbdd30" path="res://objects/bottle/bottle.tscn" id="5_11okb"]
+[ext_resource type="PackedScene" uid="uid://bktf62tjor4y3" path="res://objects/medkit/medkit.tscn" id="6_eq201"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4t83l"]
 texture = ExtResource("1_tlmfi")
@@ -38,6 +40,14 @@ sources/1 = SubResource("TileSetAtlasSource_4t83l")
 
 [node name="0100" type="Node2D"]
 
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="BackgroundAll" type="Sprite2D" parent="ParallaxBackground"]
+show_behind_parent = true
+position = Vector2(432, 240)
+scale = Vector2(0.84375, 0.46875)
+texture = ExtResource("1_r1l8j")
+
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_mkpae")
 format = 2
@@ -54,12 +64,10 @@ position = Vector2(648, 354)
 position = Vector2(356, 431)
 
 [node name="Enemy2" parent="." instance=ExtResource("3_r1l8j")]
-position = Vector2(375, 330)
+position = Vector2(508, 337)
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+[node name="Bottle" parent="." instance=ExtResource("5_11okb")]
+position = Vector2(519, 82)
 
-[node name="BackgroundAll" type="Sprite2D" parent="ParallaxBackground"]
-show_behind_parent = true
-position = Vector2(432, 240)
-scale = Vector2(0.84375, 0.46875)
-texture = ExtResource("1_r1l8j")
+[node name="Medkit" parent="." instance=ExtResource("6_eq201")]
+position = Vector2(132, 139)
